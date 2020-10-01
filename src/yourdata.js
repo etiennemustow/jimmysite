@@ -16,6 +16,7 @@ export default
                         'Art Department based in London',                   //Line 3 For Header
                         
     ],
+    landingPage: 'jimmyvantwest | art department',
         //Contact Email
         contactEmail:'jimmyvantwest@gmail.com',
         // Add Your About Text Here

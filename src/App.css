@@ -3,7 +3,7 @@
 
 body{
   font-size: 16px;
-  background: white;
+  background-image: url('/public/images/background.jpg');
   font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
   z-index: 1;
@@ -12,6 +12,7 @@ body{
 
 .App {
   text-align: center;
+  
 }
 
 
