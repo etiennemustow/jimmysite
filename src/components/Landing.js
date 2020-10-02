@@ -8,12 +8,14 @@ class Landing extends Component {
 
     render() {
         return (<div>
+            <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>
         <h1 className='heading-background'>CREATIVE</h1>
             <Fade bottom>
             <h1 className='landing'>
-            {data.landingPage}<br></br>
-                    <button className='landing'><a href='home' rel="noopener noreferrer">Enter</a></button>
+            {data.landingPage}
                 </h1>
+                <button className='landing-button'><a href='home' rel="noopener noreferrer">enter</a></button>
+
             </Fade>
 
 
