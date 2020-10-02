@@ -6,7 +6,7 @@ class Contact extends Component {
     state = {  }
     render() { 
         return (  <div>
-        <h1>
+        <h1 class="subheading">
                 <Fade bottom cascade> Contact.</Fade>
         </h1>
         <Fade bottom>
@@ -15,9 +15,9 @@ class Contact extends Component {
                 Let’s create your next<br></br>
                 <span className='amazing-color'>project together</span></h1>
                     <a href={`mailto:${data.contactEmail}`} className='email'>{data.contactEmail}</a>
-                <ul>
+                <ul class="instagram">
                     {data.social.map((link,index)=>(
-                        <li key={index}><a target='_blank' rel="noopener noreferrer" href={link.url}>{link.name}</a></li>
+                        <li key={index}><a className="instagram" target='_blank' rel="noopener noreferrer" href={link.url}>{link.name}</a></li>
                     ))}   
                 </ul>
         </div>

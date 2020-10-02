@@ -8,12 +8,9 @@ import {
 import Fade from 'react-reveal/Fade';
 
 
-// import Home from './components/Home';
+import Homepage from './components/Homepage';
 import Landing from './components/Landing';
 import Header from './components/Header';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
 import Navbar from './components/Navbar'
 
 function App() {
@@ -33,7 +30,7 @@ function App() {
         </Route> 
 
         <Route path="/homepage">
-            <Homepage />
+            {/* <Homepage /> */}
         </Route>
 
         </Switch> 
@@ -42,7 +39,7 @@ function App() {
     );
 }
 
-function Homepage() {
+function Homepage2() {
       return( 
         <div>
         <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>
@@ -65,6 +62,7 @@ function Homepage() {
 
 function Home() {
     return ( 
+        <Homepage></Homepage>
         // <div className = "App" >
         // <Navbar > </Navbar> 
         // <div className = "App-header" >
@@ -79,29 +77,7 @@ function Home() {
         //      < Contact > </Contact> 
         //  </div > 
         //  </div>
-        <div class="homepage">
-            <Navbar></Navbar>
-    <div className = "App-header" > 
-    <header>
-                <h1>
-                    jimmyvantwest | art department</h1>
-            </header>
-            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-            <Fade bottom>
-
-            <div id="outer">
-           <div class="inner"><button className='home-button'><a href='home' rel="noopener noreferrer">production design</a></button></div>
-           <div class="inner"><button className='home-button'><a href='old' rel="noopener noreferrer">art assisting</a></button></div>
-           <div class="inner"><button className='home-button'><a href='home' rel="noopener noreferrer">render art</a></button></div>
-           </div>
-
-
-</Fade>
-            </div>
-
-
-
-    </div>
+ 
 
     )
 }
