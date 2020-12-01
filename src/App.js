@@ -12,6 +12,8 @@ import Homepage from './components/Homepage';
 import Landing from './components/Landing';
 import Header from './components/Header';
 import Navbar from './components/Navbar'
+import ProductionDesign from './components/ProductionDesign';
+import ArtAssisting from './components/ArtAssisting';
 
 function App() {
     return (
@@ -24,10 +26,15 @@ function App() {
             <Route path ="/home" >
         <Home />
         </Route> 
-
+{/* 
         <Route path ="/" >
-        <Landing />
-        </Route> 
+            <Landing />
+        </Route>  */}
+
+    <Route exact path ="/production_design" component={ProductionDesign} />
+    <Route exact path ="/art_assisting" component={ArtAssisting} />
+         
+
 
         <Route path="/homepage">
             {/* <Homepage /> */}
@@ -37,27 +44,6 @@ function App() {
         </Router> 
         </div >
     );
-}
-
-function Homepage2() {
-      return( 
-        <div>
-        <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>
-    <h1 className='heading-background'>CREATIVE</h1>
-        <Fade bottom>
-        <h1 className='landing'>
-        <button className='landing-button'><a href='productiondesign' rel="noopener noreferrer">production design</a></button>
-        <button className='landing-button'><a href='artassisting' rel="noopener noreferrer">art assisting</a></button>
-        <button className='landing-button'><a href='renderart' rel="noopener noreferrer">render art</a></button>
-            </h1>
-
-
-        </Fade>
-
-
-
-    </div>
-      )
 }
 
 function Home() {

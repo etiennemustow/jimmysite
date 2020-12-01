@@ -22,8 +22,8 @@ class Homepage extends Component {
         <Fade bottom>
 
         <div id="outer">
-       <div class="inner"><button className='home-button'><a href='home' rel="noopener noreferrer">production design</a></button></div>
-       <div class="inner"><button className='home-button'><a href='old' rel="noopener noreferrer">art assisting</a></button></div>
+       <div class="inner"><button className='home-button'><a href='production_design' rel="noopener noreferrer">production design</a></button></div>
+       <div class="inner"><button className='home-button'><a href='art_assisting' rel="noopener noreferrer">art assisting</a></button></div>
        <div class="inner"><button className='home-button'><a href='home' rel="noopener noreferrer">render art</a></button></div>
        </div>
 
