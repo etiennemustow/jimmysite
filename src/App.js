@@ -26,14 +26,14 @@ function App() {
             <Route path ="/home" >
         <Home />
         </Route> 
-{/* 
-        <Route path ="/" >
-            <Landing />
-        </Route>  */}
+
 
     <Route exact path ="/production_design" component={ProductionDesign} />
     <Route exact path ="/art_assisting" component={ArtAssisting} />
          
+        <Route path ="/" >
+            <Landing />
+        </Route> 
 
 
         <Route path="/homepage">
