@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap');
 
 :any-link { color: rgb(64, 87, 17);}
-:any-link:active { color: rgb(0, 100, 0) }
 
 body {
     font-size: 16px;
@@ -44,6 +43,11 @@ body {
 .inner
 {
     display: inline-block;
+}
+
+a:hover{
+color: black;
+opacity: 1;
 }
 
 .heading-background {
@@ -119,6 +123,8 @@ li .link:hover {
     color: black;
     opacity: 1;
 }
+
+
 
 .header-title button {
     background: white;
@@ -261,6 +267,15 @@ li .link:hover {
     color: white;
 }
 
+.footer a:hover {
+    color: black;
+    opacity: 1;
+}
+
+a.email:hover, a.instagram:hover {
+    color: black;
+    opacity: 1; 
+}
 
 /* SMARTPHONES PORTRAIT */
 
