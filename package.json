@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "jquery": "^3.5.1",
     "lerp": "1.0.3",
     "modal-video": "^2.4.2",
     "react": "experimental",

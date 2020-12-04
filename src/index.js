@@ -10,7 +10,8 @@ import { Block, useBlock } from "./blocks"
 import state from "./store"
 import "./styles.css"
 import ModalVideo from 'react-modal-video'
-
+import $ from "jquery"
+import "../node_modules/modal-video/js/jquery-modal-video";
 
 function Startup() {
   const ref = useRef()
@@ -60,6 +61,7 @@ function Content() {
     TextureLoader,
     state.paragraphs.map(({ image }) => image)
   )
+  const [isOpen, setOpen] = useState(false)
   useMemo(() => images.forEach(texture => (texture.minFilter = LinearFilter)), [images])
   const { contentMaxWidth: w, canvasWidth, canvasHeight, mobile } = useBlock()
   return (
@@ -94,6 +96,21 @@ function Content() {
   )
 }
 
+// function Modal({setNow, paragraph}){
+//   const [isOpen, setOpen] = useState(false)
+//   var isItOpen = setNow
+//   if (isItOpen == true) {
+//     console.log("AHHHHH")
+//     setOpen(true)
+//   }
+//     return ( 
+     
+//     <Fragment>
+//      <ModalVideo channel={paragraph.channel} height="100%" width="100%" autoplay isOpen={isOpen} videoId={paragraph.video} onClose={() => setOpen(false)} />
+//      </Fragment>
+// )
+
+// }
 
 function App() {
   const scrollArea = useRef()
@@ -106,7 +123,6 @@ function App() {
  
       <Canvas className="canvas" concurrent pixelRatio={1} orthographic camera={{ zoom: state.zoom, position: [0, 0, 500] }}>
         <Suspense fallback={<Dom center className="loading" children="Loading..." />}>
-          {/* <Init /> */}
           <Content />
           <Diamonds />
           <Startup />
@@ -115,17 +131,20 @@ function App() {
       <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
         {new Array(state.sections).fill().map((_, index) => (
           <div id={"0" + index + "_click"} >
-            {state.paragraphs.map(paragraph => {
-         return (<Fragment>
-        <ModalVideo channel={paragraph.channel} height="100%" width="100%" autoplay isOpen={isOpen} videoId={paragraph.video} onClose={() => setOpen(false)} />
-        </Fragment>)
+                     {state.paragraphs.map(paragraph => { 
+          return (
+          <Fragment>
+         <ModalVideo channel={paragraph.channel} height="100%" width="100%" autoplay isOpen={isOpen} videoId={paragraph.video} onClose={() => setOpen(false)} /> 
+         </Fragment>)
 })}
           <div onClick={(e) => {
             e.stopPropagation()
-            console.log("CLICKED")
-            setOpen(true)
+            console.log("CLICKED" + index)
+              setOpen(true)
+
           }} key={index} id={"0" + index} style={{ height: `${(state.pages / state.sections) * 100}vh` }} /> 
-          </div>
+
+     </div>
         ))}
       </div>
       <div className="frame">
