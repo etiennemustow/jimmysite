@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom"
-import React, { Suspense, useEffect, useRef, useMemo } from "react"
+import React, { Suspense, useEffect, useRef, useMemo, useState, setState, Fragment } from "react"
 import { Canvas, Dom, useLoader, useFrame } from "react-three-fiber"
 import { TextureLoader, LinearFilter } from "three"
 import lerp from "lerp"
@@ -9,6 +9,8 @@ import Plane from "./components/Plane"
 import { Block, useBlock } from "./blocks"
 import state from "./store"
 import "./styles.css"
+import ModalVideo from 'react-modal-video'
+
 
 function Startup() {
   const ref = useRef()
@@ -17,6 +19,8 @@ function Startup() {
 }
 
 function Paragraph({ image, index, offset, factor, header, aspect, text }) {
+  const [isOpen, setOpen] = useState(false)
+
   const { contentMaxWidth: w, canvasWidth, margin, mobile } = useBlock()
   const size = aspect < 1 && !mobile ? 0.65 : 1
   const alignRight = (canvasWidth - w * size - margin) / 2
@@ -24,9 +28,13 @@ function Paragraph({ image, index, offset, factor, header, aspect, text }) {
   const left = !(index % 2)
   const color = index % 2 ? "#D40749" : "#2FE8C3"
   return (
+  
     <Block factor={factor} offset={offset}>
       <group position={[left ? -alignRight : alignRight, 0, 0]}>
-        <Plane map={image} args={[1, 1, 32, 32]} shift={75} size={size} aspect={aspect} scale={[w * size, (w * size) / aspect, 1]} frustumCulled={false} />
+        {/* <Dom onClick={()=> setOpen(true)} > */}
+       <Plane map={image} args={[1, 1, 32, 32]} shift={75} size={size} aspect={aspect} scale={[w * size, (w * size) / aspect, 1]} frustumCulled={false} />
+        {/* </Dom> */}
+
         <Dom
           style={{ width: pixelWidth / (mobile ? 1 : 2), textAlign: left ? "left" : "right" }}
           position={[left || mobile ? (-w * size) / 2 : 0, (-w * size) / 2 / aspect - 0.4, 1]}>
@@ -40,8 +48,10 @@ function Paragraph({ image, index, offset, factor, header, aspect, text }) {
             {"0" + (index + 1)}
           </Text>
         </Block>
-      </group>
+      </group> 
+   
     </Block>
+    
   )
 }
 
@@ -84,14 +94,18 @@ function Content() {
   )
 }
 
+
 function App() {
   const scrollArea = useRef()
   const onScroll = e => (state.top.current = e.target.scrollTop)
   useEffect(() => void onScroll({ target: scrollArea.current }), [])
+  const [isOpen, setOpen] = useState(false)
+
   return (
     <>
       <Canvas className="canvas" concurrent pixelRatio={1} orthographic camera={{ zoom: state.zoom, position: [0, 0, 500] }}>
         <Suspense fallback={<Dom center className="loading" children="Loading..." />}>
+          {/* <Init /> */}
           <Content />
           <Diamonds />
           <Startup />
@@ -99,7 +113,16 @@ function App() {
       </Canvas>
       <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
         {new Array(state.sections).fill().map((_, index) => (
-          <div key={index} id={"0" + index} style={{ height: `${(state.pages / state.sections) * 100}vh` }} />
+          <div id={"0" + index + "_click"} onClick={(e) => {
+            e.stopPropagation()
+            console.log("CLICKED")
+            setOpen(true)
+          }}>
+         <Fragment>
+        <ModalVideo channel='vimeo' autoplay isOpen={isOpen} videoId="380030498" onClose={() => setOpen(false)} />
+        </Fragment>
+          <div key={index} id={"0" + index} style={{ height: `${(state.pages / state.sections) * 100}vh` }} /> 
+          </div>
         ))}
       </div>
       <div className="frame">
