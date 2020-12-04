@@ -22,6 +22,11 @@ $backdrop-color: rgba(0, 0, 0, .5);
 	}
 }
 
+iframe {
+    width: 1080px;
+    height: 610px;
+}
+
 .modal-video {
 	position: fixed;
 	top: 0;
@@ -46,11 +51,11 @@ $backdrop-color: rgba(0, 0, 0, .5);
 	opacity: 0;
 
 	& .modal-video-movie-wrap {
-		-webkit-transform: translate(0, 100px);
-		-moz-transform: translate(0, 100px);
-		-ms-transform: translate(0, 100px);
-		-o-transform: translate(0, 100px);
-		transform: translate(0, 100px);
+		-webkit-transform: translate(0, 1000px);
+		-moz-transform: translate(0, 1000px);
+		-ms-transform: translate(0, 1000px);
+		-o-transform: translate(0, 1000px);
+		transform: translate(0, 1000px);
 	}
 }
 
@@ -107,8 +112,8 @@ $backdrop-color: rgba(0, 0, 0, .5);
 	width: 35px;
 	height: 35px;
 	overflow: hidden;
-	border: none;
-	background: transparent;
+	border: black;
+    background: black;
 
 	&:before {
 		transform: rotate(45deg);
@@ -120,7 +125,7 @@ $backdrop-color: rgba(0, 0, 0, .5);
 
 	&:before,
 	&:after {
-		content: '';
+		content: 'X';
 		position: absolute;
 		height: 2px;
 		width: 100%;
