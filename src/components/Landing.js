@@ -9,7 +9,6 @@ class Landing extends Component {
     render() {
         return (<div>
             <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>
-        <h1 className='heading-background'>CREATIVE</h1>
             <Fade bottom>
             <h1 className='landing'>
             {data.landingPage}
