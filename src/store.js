@@ -15,16 +15,18 @@ const state = {
       text: "Directed by Maxim Kelly",
       video: "380030498",
       channel: "vimeo"
+    },
+    {
+      offset: 2,
+      factor: 2.0,
+      header: "Diamond Road",
+      image: "/photo-1519608487953-e999c86e7455.jpeg",
+      aspect: 1.5,
+      text:
+        "The man who comes back through the Door in the Wall will never be quite the same as the man who went out. He will be wiser but less sure, happier but less self-satisfied, humbler in acknowledging his ignorance yet better equipped to understand the relationship of words to things, of systematic reasoning to the unfathomable mystery which it tries, forever vainly, to comprehend.",
+      video: "450474177",
+      channel: "vimeo"
     }
-    // {
-    //   offset: 2,
-    //   factor: 2.0,
-    //   header: "Diamond Road",
-    //   image: "/photo-1519608487953-e999c86e7455.jpeg",
-    //   aspect: 1.5,
-    //   text:
-    //     "The man who comes back through the Door in the Wall will never be quite the same as the man who went out. He will be wiser but less sure, happier but less self-satisfied, humbler in acknowledging his ignorance yet better equipped to understand the relationship of words to things, of systematic reasoning to the unfathomable mystery which it tries, forever vainly, to comprehend."
-    // },
     // {
     //   offset: 3,
     //   factor: 2.25,

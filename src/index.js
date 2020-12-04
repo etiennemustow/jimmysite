@@ -114,17 +114,17 @@ function App() {
       </Canvas>
       <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
         {new Array(state.sections).fill().map((_, index) => (
-          <div id={"0" + index + "_click"} onClick={(e) => {
-            e.stopPropagation()
-            console.log("CLICKED")
-            setOpen(true)
-          }}>
+          <div id={"0" + index + "_click"} >
             {state.paragraphs.map(paragraph => {
          return (<Fragment>
         <ModalVideo channel={paragraph.channel} height="100%" width="100%" autoplay isOpen={isOpen} videoId={paragraph.video} onClose={() => setOpen(false)} />
         </Fragment>)
 })}
-          <div key={index} id={"0" + index} style={{ height: `${(state.pages / state.sections) * 100}vh` }} /> 
+          <div onClick={(e) => {
+            e.stopPropagation()
+            console.log("CLICKED")
+            setOpen(true)
+          }} key={index} id={"0" + index} style={{ height: `${(state.pages / state.sections) * 100}vh` }} /> 
           </div>
         ))}
       </div>
