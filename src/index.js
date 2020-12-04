@@ -103,9 +103,7 @@ function App() {
 
   return (
     <>
-      <Fragment>
-        <ModalVideo channel='vimeo' height="100%" width="100%" autoplay isOpen={isOpen} videoId="380030498" onClose={() => setOpen(false)} />
-        </Fragment>
+ 
       <Canvas className="canvas" concurrent pixelRatio={1} orthographic camera={{ zoom: state.zoom, position: [0, 0, 500] }}>
         <Suspense fallback={<Dom center className="loading" children="Loading..." />}>
           {/* <Init /> */}
@@ -121,6 +119,11 @@ function App() {
             console.log("CLICKED")
             setOpen(true)
           }}>
+            {state.paragraphs.map(paragraph => {
+         return (<Fragment>
+        <ModalVideo channel={paragraph.channel} height="100%" width="100%" autoplay isOpen={isOpen} videoId={paragraph.video} onClose={() => setOpen(false)} />
+        </Fragment>)
+})}
           <div key={index} id={"0" + index} style={{ height: `${(state.pages / state.sections) * 100}vh` }} /> 
           </div>
         ))}
