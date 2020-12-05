@@ -64,18 +64,24 @@ function Content() {
   const [isOpen, setOpen] = useState(false)
   useMemo(() => images.forEach(texture => (texture.minFilter = LinearFilter)), [images])
   const { contentMaxWidth: w, canvasWidth, canvasHeight, mobile } = useBlock()
+
   return (
     <>
       <Block factor={1} offset={0}>
         <Block factor={1.2}>
           <Text left size={w * 0.08} position={[-w / 3.2, 0.5, -1]} color="#d40749">
-            MOKSHA
+            PORTFOLIO
           </Text>
         </Block>
         <Block factor={1.0}>
-          <Dom position={[-w / 3.2, -w * 0.08 + 0.25, -1]}>It was the year 2076.{mobile ? <br /> : " "}The substance had arrived.</Dom>
+          <Dom position={[-w / 3.2, -w * 0.08 + 0.25, -1]}>JIMMY VAN TWEST{mobile ? <br /> : " "}| ART DEPARTMENT</Dom>
         </Block>
       </Block>
+      <Block factor={1.2}>
+          <Text left size={w * 0.07} position={[-w / 1.3, -4.5, -1]} color="#d40749">
+            Art Assisting
+          </Text>
+        </Block>
       <Block factor={1.2} offset={5.7}>
         <MultilineText top left size={w * 0.15} lineHeight={w / 5} position={[-w / 3.5, 0, -1]} color="#2fe8c3" text={"four\nzero\nzero"} />
       </Block>
@@ -96,28 +102,22 @@ function Content() {
   )
 }
 
-// function Modal({setNow, paragraph}){
+// function ModalVideoElement({clicked, paragraph}){
 //   const [isOpen, setOpen] = useState(false)
-//   var isItOpen = setNow
-//   if (isItOpen == true) {
-//     console.log("AHHHHH")
-//     setOpen(true)
-//   }
-//     return ( 
-     
-//     <Fragment>
-//      <ModalVideo channel={paragraph.channel} height="100%" width="100%" autoplay isOpen={isOpen} videoId={paragraph.video} onClose={() => setOpen(false)} />
-//      </Fragment>
-// )
-
+//     console.log("it reached")
+//     return (
+//     )
 // }
+
+
+
 
 function App() {
   const scrollArea = useRef()
   const onScroll = e => (state.top.current = e.target.scrollTop)
   useEffect(() => void onScroll({ target: scrollArea.current }), [])
   const [isOpen, setOpen] = useState(false)
-
+  const paragraphs = state.paragraphs
   return (
     <>
  
@@ -130,34 +130,35 @@ function App() {
       </Canvas>
       <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
         {new Array(state.sections).fill().map((_, index) => (
-          <div id={"0" + index + "_click"} >
-                     {state.paragraphs.map(paragraph => { 
-          return (
-          <Fragment>
-         <ModalVideo channel={paragraph.channel} height="100%" width="100%" autoplay isOpen={isOpen} videoId={paragraph.video} onClose={() => setOpen(false)} /> 
-         </Fragment>)
-})}
+          <div id={"0" + index + "_click"} >     
+
+
+
+  {/* {state.paragraphs.map(paragraph => { 
+       return (<ModalVideoElement clicked={clicked} state={state}/>)
+  } */}
           <div onClick={(e) => {
             e.stopPropagation()
             console.log("CLICKED" + index)
-              setOpen(true)
+            setOpen(true)
 
           }} key={index} id={"0" + index} style={{ height: `${(state.pages / state.sections) * 100}vh` }} /> 
+         <ModalVideo channel={paragraphs[0].channel} height="100%" width="100%" autoplay isOpen={isOpen} videoId={paragraphs[0].video} onClose={() => setOpen(false)} /> 
 
      </div>
         ))}
       </div>
       <div className="frame">
-        <h1 className="frame__title">Scroll, Refraction and Shader Effects</h1>
+        <h1 className="frame__title">Jimmy Van Twest | Art Department</h1>
         <div className="frame__links">
-          <a className="frame__link" href="http://tympanus.net/Tutorials/PhysicsMenu/">
-            Previous demo
+          <a className="frame__link" href="#01">
+            Art Assisting
           </a>
           <a className="frame__link" href="https://tympanus.net/codrops/?p=45441">
-            Article
+            Production Design
           </a>
           <a className="frame__link" href="https://github.com/drcmda/the-substance">
-            GitHub
+            Render Art
           </a>
         </div>
         <div className="frame__nav">
