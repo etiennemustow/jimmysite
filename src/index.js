@@ -154,10 +154,10 @@ function App() {
           <a className="frame__link" href="#01">
             Art Assisting
           </a>
-          <a className="frame__link" href="https://tympanus.net/codrops/?p=45441">
+          <a className="frame__link" href="">
             Production Design
           </a>
-          <a className="frame__link" href="https://github.com/drcmda/the-substance">
+          <a className="frame__link" href="">
             Render Art
           </a>
         </div>
