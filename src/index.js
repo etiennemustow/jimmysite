@@ -120,10 +120,15 @@ function Carousel() {
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src={production_design[0].image} alt="First slide"></img>
+      <div class="crop">
+      <img class="d-block w-100" src={production_design[0].image} alt="First slide"  ></img>
+      </div>
     </div>
+
     <div class="carousel-item">
-      <img class="d-block w-100" src={production_design[1].image} alt="Second slide"></img>
+    <div class="crop">
+      <img class="d-block w-100" src={production_design[1].image} alt="Second slide" ></img>
+      </div>
     </div>
     {/* <div class="carousel-item">
       <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide"></img>
@@ -147,15 +152,20 @@ function ProductionDesign() {
   const [isOpen, setOpen] = useState(false)
   const [isOpenProdDesign0, setOpenProdDesign0] = useState(false)
   const [isOpenProdDesign1, setOpenProdDesign1] = useState(false)
+  
+  
+  function prodDesign0Action(boolean) {
+    console.log("CLICKED")
+    setOpenProdDesign0(boolean)
+  }
+  function prodDesign1Action(boolean) {
+    console.log("CLICKED")
+    setOpenProdDesign1(boolean)
+  }
 
-  function prodDesign0Action() {
-    console.log("CLICKED")
-    setOpenProdDesign0(true)
-  }
-  function prodDesign1Action() {
-    console.log("CLICKED")
-    setOpenProdDesign1(true)
-  }
+  const prodDesignActions = [prodDesign0Action, prodDesign1Action]
+  const is_action = [isOpenProdDesign0, isOpenProdDesign1]
+
   return (
     <>
  
@@ -166,38 +176,26 @@ function ProductionDesign() {
 <Carousel />
 
 <div class="row"> 
-
+{production_design.map((index) =>
 <React.Fragment>
-<ModalVideo channel={production_design[0].channel} height="100%" width="100%" autoplay isOpen={isOpenProdDesign0} videoId={production_design[0].video} onClose={() => setOpenProdDesign0(false)} /> 
+<ModalVideo channel={index.channel} height="100%" width="100%" autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => prodDesignActions[index.action](false)} /> 
 <div class="column">
 <div class="container2" onClick={(e) => {
             e.stopPropagation()
-            prodDesign0Action()
+            prodDesignActions[index.action](true)
           }}>
 <div class="overlay">
-      <img src={production_design[0].image}></img>
-      <div class="text-header">{production_design[0].header}</div>
-      <div class="text-footer">{production_design[0].text}</div>
+
+      <img src={index.image}></img>
+      <div class="text-header">{index.header}</div>
+      <div class="text-footer">{index.text}</div>
     </div>
 
   </div>
 </div>
 </React.Fragment>
-<React.Fragment>
-<ModalVideo channel={production_design[1].channel} height="100%" width="100%" autoplay isOpen={isOpenProdDesign1} videoId={production_design[1].video} onClose={() => setOpenProdDesign1(false)} /> 
-<div class="column">
-<div class="container2" onClick={(e) => {
-            e.stopPropagation()
-            prodDesign1Action()
-          }}>
-<div class="overlay">
-      <img src={production_design[1].image}></img>
-      <div class="text-header">{production_design[1].header}</div>
-      <div class="text-footer">{production_design[1].text}</div>
-    </div>
-    </div>
-</div>
-</React.Fragment>
+)}
+
 <div class="column">
 </div>
 

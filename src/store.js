@@ -2,6 +2,7 @@ import { createRef } from "react"
 import { Vector3 } from "three"
 
 const state = {
+  
   sections: 9,
   pages: 8,
   zoom: 75,
@@ -15,7 +16,8 @@ const state = {
       aspect: 1.51,
       text: "directed by Maxim Kelly",
       video: "380030498",
-      channel: "vimeo"
+      channel: "vimeo",
+      action: 0
     },
     {
       offset: 2,
@@ -26,7 +28,8 @@ const state = {
       text:
       "directed by Milo Blake",
       video: "450474177",
-      channel: "vimeo"
+      channel: "vimeo",
+      action: 1
     }
   ],
   art_assisting: [
