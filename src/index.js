@@ -148,10 +148,16 @@ function ProductionDesign() {
   const [isOpenProdDesign0, setOpenProdDesign0] = useState(false)
   const [isOpenProdDesign1, setOpenProdDesign1] = useState(false)
 
-
+  function prodDesign0Action() {
+    console.log("CLICKED")
+    setOpenProdDesign0(true)
+  }
+  function prodDesign1Action() {
+    console.log("CLICKED")
+    setOpenProdDesign1(true)
+  }
   return (
     <>
-  {/* <InitialPage /> */}
  
 <div class = "blank-row">
 
@@ -160,24 +166,36 @@ function ProductionDesign() {
 <Carousel />
 
 <div class="row"> 
+
 <React.Fragment>
 <ModalVideo channel={production_design[0].channel} height="100%" width="100%" autoplay isOpen={isOpenProdDesign0} videoId={production_design[0].video} onClose={() => setOpenProdDesign0(false)} /> 
-<div class="column" onClick={(e) => {
+<div class="column">
+<div class="container2" onClick={(e) => {
             e.stopPropagation()
-            console.log("CLICKED")
-            setOpenProdDesign0(true)
+            prodDesign0Action()
           }}>
-<img src={production_design[0].image}></img>
+<div class="overlay">
+      <img src={production_design[0].image}></img>
+      <div class="text-header">{production_design[0].header}</div>
+      <div class="text-footer">{production_design[0].text}</div>
+    </div>
+
+  </div>
 </div>
 </React.Fragment>
 <React.Fragment>
 <ModalVideo channel={production_design[1].channel} height="100%" width="100%" autoplay isOpen={isOpenProdDesign1} videoId={production_design[1].video} onClose={() => setOpenProdDesign1(false)} /> 
-<div class="column" onClick={(e) => {
+<div class="column">
+<div class="container2" onClick={(e) => {
             e.stopPropagation()
-            console.log("CLICKED")
-            setOpenProdDesign1(true)
+            prodDesign1Action()
           }}>
-<img src={production_design[1].image}></img>
+<div class="overlay">
+      <img src={production_design[1].image}></img>
+      <div class="text-header">{production_design[1].header}</div>
+      <div class="text-footer">{production_design[1].text}</div>
+    </div>
+    </div>
 </div>
 </React.Fragment>
 <div class="column">
@@ -187,7 +205,27 @@ function ProductionDesign() {
 
 
 </div>
+<NavBar art_assisting="frame__link" production_design="frame__link_white" render_art="frame__link" />
 </>)
+}
+
+function NavBar({art_assisting, production_design, render_art}) {
+  return (
+  <div className="frame">
+  <h1 className="frame__title">Jimmy Van Twest | Art Department</h1>
+  <div className="frame__links">
+    <a className={art_assisting} href="#01">
+      Art Assisting
+    </a>
+    <a className={production_design} href="production_design">
+      Production Design
+    </a>
+    <a className={render_art} href="  ">
+      Render Art
+    </a>
+  </div>
+</div>
+  )
 }
 
 function InitialPage() {
@@ -208,6 +246,12 @@ function InitialPage() {
   )
 }
 
+function Home() {
+  return (
+  <NavBar art_assisting="frame__link" production_design="frame__link" render_art="frame__link" />
+  )
+}
+
 function App() {
  
 
@@ -217,26 +261,13 @@ function App() {
         <Router > 
     <Switch >
 
-
+<Route exact path="/" component={Home} />
 <Route exact path ="/production_design" component={ProductionDesign} />
 {/* <Route exact path ="/art_assisting" component={ArtAssisting} /> */}   
     </Switch> 
     </Router> 
     {/* <InitialPage /> */}
-    <div className="frame">
-  <h1 className="frame__title">Jimmy Van Twest | Art Department</h1>
-  <div className="frame__links">
-    <a className="frame__link" href="#01">
-      Art Assisting
-    </a>
-    <a className="frame__link" href="production_design">
-      Production Design
-    </a>
-    <a className="frame__link" href="  ">
-      Render Art
-    </a>
-  </div>
-</div>
+
     </>
   )
 }

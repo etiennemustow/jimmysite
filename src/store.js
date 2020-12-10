@@ -13,7 +13,7 @@ const state = {
       header: "TTRRUUCES - TTRRUUCES",
       image: "/truuuces.png",
       aspect: 1.51,
-      text: "Directed by Maxim Kelly",
+      text: "directed by Maxim Kelly",
       video: "380030498",
       channel: "vimeo"
     },
