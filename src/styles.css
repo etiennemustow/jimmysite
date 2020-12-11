@@ -19,8 +19,11 @@
 
 .row {
   display: inline-flex;
+  position: relative;
   flex-wrap: wrap;
   padding: 0 4px;
+  height: 100%;
+  width: 100%;
   /* padding-top: 300px; */
 
 }

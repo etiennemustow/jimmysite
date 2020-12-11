@@ -33,7 +33,7 @@ function Startup() {
 //   const left = !(index % 2)
 //   const color = index % 2 ? "#D40749" : "#2FE8C3"
 //   return (
-  
+
 //     <Block factor={factor} offset={offset}>
 //       <group position={[left ? -alignRight : alignRight, 0, 0]}>
 //         {/* <Dom onClick={()=> setOpen(true)} > */}
@@ -54,9 +54,9 @@ function Startup() {
 //           </Text>
 //         </Block>
 //       </group> 
-   
+
 //     </Block>
-    
+
 //   )
 // }
 
@@ -116,34 +116,34 @@ function Startup() {
 function Carousel() {
   const production_design = state.paragraphs.production_design
 
-  return(
-  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="crop">
-      <img class="d-block w-100" src={production_design[0].image} alt="First slide"  ></img>
-      </div>
-    </div>
+  return (
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="crop">
+            <img class="d-block w-100" src={production_design[0].image} alt="First slide"  ></img>
+          </div>
+        </div>
 
-    <div class="carousel-item">
-    <div class="crop">
-      <img class="d-block w-100" src={production_design[1].image} alt="Second slide" ></img>
-      </div>
-    </div>
-    {/* <div class="carousel-item">
+        <div class="carousel-item">
+          <div class="crop">
+            <img class="d-block w-100" src={production_design[1].image} alt="Second slide" ></img>
+          </div>
+        </div>
+        {/* <div class="carousel-item">
       <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide"></img>
     </div> */}
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-)
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  )
 }
 
 function ProductionDesign() {
@@ -152,8 +152,8 @@ function ProductionDesign() {
   const [isOpen, setOpen] = useState(false)
   const [isOpenProdDesign0, setOpenProdDesign0] = useState(false)
   const [isOpenProdDesign1, setOpenProdDesign1] = useState(false)
-  
-  
+
+
   function prodDesign0Action(boolean) {
     console.log("CLICKED")
     setOpenProdDesign0(boolean)
@@ -168,61 +168,61 @@ function ProductionDesign() {
 
   return (
     <>
- 
-<div class = "blank-row">
 
-</div>
+      <div class="blank-row">
 
-<Carousel />
+      </div>
 
-<div class="row"> 
-{production_design.map((index) =>
-<React.Fragment>
-<ModalVideo channel={index.channel} height="100%" width="100%" autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => prodDesignActions[index.action](false)} /> 
-<div class="column">
-<div class="container2" onClick={(e) => {
-            e.stopPropagation()
-            prodDesignActions[index.action](true)
-          }}>
-<div class="overlay">
+      <Carousel />
 
-      <img src={index.image}></img>
-      <div class="text-header">{index.header}</div>
-      <div class="text-footer">{index.text}</div>
-    </div>
+      <div class="row">
+        {production_design.map((index) =>
+          <React.Fragment>
+            <ModalVideo channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => prodDesignActions[index.action](false)} />
+            <div class="column">
+              <div class="container2" onClick={(e) => {
+                e.stopPropagation()
+                prodDesignActions[index.action](true)
+              }}>
+                <div class="overlay">
 
-  </div>
-</div>
-</React.Fragment>
-)}
+                  <img src={index.image}></img>
+                  <div class="text-header">{index.header}</div>
+                  <div class="text-footer">{index.text}</div>
+                </div>
 
-<div class="column">
-</div>
+              </div>
+            </div>
+          </React.Fragment>
+        )}
 
-
+        <div class="column">
+        </div>
 
 
-</div>
-<NavBar art_assisting="frame__link" production_design="frame__link_white" render_art="frame__link" />
-</>)
+
+
+      </div>
+      <NavBar art_assisting="frame__link" production_design="frame__link_white" render_art="frame__link" />
+    </>)
 }
 
-function NavBar({art_assisting, production_design, render_art}) {
+function NavBar({ art_assisting, production_design, render_art }) {
   return (
-  <div className="frame">
-  <h1 className="frame__title">Jimmy Van Twest | Art Department</h1>
-  <div className="frame__links">
-    <a className={art_assisting} href="#01">
-      Art Assisting
+    <div className="frame">
+      <h1 className="frame__title">Jimmy Van Twest | Art Department</h1>
+      <div className="frame__links">
+        <a className={art_assisting} href="#01">
+          Art Assisting
     </a>
-    <a className={production_design} href="production_design">
-      Production Design
+        <a className={production_design} href="production_design">
+          Production Design
     </a>
-    <a className={render_art} href="  ">
-      Render Art
+        <a className={render_art} href="  ">
+          Render Art
     </a>
-  </div>
-</div>
+      </div>
+    </div>
   )
 }
 
@@ -233,38 +233,38 @@ function InitialPage() {
   const [isOpen, setOpen] = useState(false)
   const paragraphs = state.paragraphs
   return (
-  <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
-    {new Array(state.sections).fill().map((_, index) => (
-      <div id={"0" + index + "_click"} >    
-      <div key={index} id={"0" + index} style={{ height: `${(state.pages / state.sections) * 100}vh` }} /> 
+    <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
+      {new Array(state.sections).fill().map((_, index) => (
+        <div id={"0" + index + "_click"} >
+          <div key={index} id={"0" + index} style={{ height: `${(state.pages / state.sections) * 100}vh` }} />
 
- </div>
-    ))}
-  </div>
+        </div>
+      ))}
+    </div>
   )
 }
 
 function Home() {
   return (
-  <NavBar art_assisting="frame__link" production_design="frame__link" render_art="frame__link" />
+    <NavBar art_assisting="frame__link" production_design="frame__link" render_art="frame__link" />
   )
 }
 
 function App() {
- 
+
 
   return (
     <>
 
-        <Router > 
-    <Switch >
+      <Router >
+        <Switch >
 
-<Route exact path="/" component={Home} />
-<Route exact path ="/production_design" component={ProductionDesign} />
-{/* <Route exact path ="/art_assisting" component={ArtAssisting} /> */}   
-    </Switch> 
-    </Router> 
-    {/* <InitialPage /> */}
+          <Route exact path="/" component={Home} />
+          <Route exact path="/production_design" component={ProductionDesign} />
+          {/* <Route exact path ="/art_assisting" component={ArtAssisting} /> */}
+        </Switch>
+      </Router>
+      {/* <InitialPage /> */}
 
     </>
   )

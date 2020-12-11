@@ -22,11 +22,6 @@ $backdrop-color: rgba(0, 0, 0, .5);
 	}
 }
 
-iframe {
-    width: 1080px;
-    height: 610px;
-}
-
 .modal-video {
 	position: fixed;
 	top: 0;
@@ -51,11 +46,11 @@ iframe {
 	opacity: 0;
 
 	& .modal-video-movie-wrap {
-		-webkit-transform: translate(0, 1000px);
-		-moz-transform: translate(0, 1000px);
-		-ms-transform: translate(0, 1000px);
-		-o-transform: translate(0, 1000px);
-		transform: translate(0, 1000px);
+		-webkit-transform: translate(0, 100px);
+		-moz-transform: translate(0, 100px);
+		-ms-transform: translate(0, 100px);
+		-o-transform: translate(0, 100px);
+		transform: translate(0, 100px);
 	}
 }
 
@@ -112,8 +107,8 @@ iframe {
 	width: 35px;
 	height: 35px;
 	overflow: hidden;
-	border: black;
-    background: black;
+	border: none;
+	background: transparent;
 
 	&:before {
 		transform: rotate(45deg);
@@ -125,7 +120,7 @@ iframe {
 
 	&:before,
 	&:after {
-		content: 'X';
+		content: '';
 		position: absolute;
 		height: 2px;
 		width: 100%;
