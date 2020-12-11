@@ -113,26 +113,27 @@ function Startup() {
 //     )
 // }
 
-function Carousel() {
-  const production_design = state.paragraphs.production_design
-
+function Carousel({pictures_location}) {
+  const pictures = pictures_location
   return (
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
+      {pictures.map((picture) =>
+        {if (picture.action == 0) {
+         return( <div class="carousel-item active">
           <div class="crop">
-            <img class="d-block w-100" src={production_design[0].image} alt="First slide"  ></img>
+            <img class="d-block w-100" src={picture.image} alt="First slide"  ></img>
           </div>
-        </div>
-
-        <div class="carousel-item">
+        </div>)
+        } else {
+         return( <div class="carousel-item">
           <div class="crop">
-            <img class="d-block w-100" src={production_design[1].image} alt="Second slide" ></img>
+            <img class="d-block w-100" src={picture.image} alt="Second slide" ></img>
           </div>
-        </div>
-        {/* <div class="carousel-item">
-      <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide"></img>
-    </div> */}
+        </div>)
+        }}
+      )}
+   
       </div>
       <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -173,7 +174,7 @@ function ProductionDesign() {
 
       </div>
 
-      <Carousel />
+      <Carousel pictures_location={production_design} />
 
       <div class="row">
         {production_design.map((index) =>
@@ -207,12 +208,82 @@ function ProductionDesign() {
     </>)
 }
 
+function ArtAssisting() {
+  const art_assisting = state.paragraphs.art_assisting
+
+  const [isOpen, setOpen] = useState(false)
+  const [isOpenArtAssisting0, setOpenArtAssisting0] = useState(false)
+  const [isOpenArtAssisting1, setOpenArtAssisting1] = useState(false)
+  const [isOpenArtAssisting2, setOpenArtAssisting2] = useState(false)
+  const [isOpenArtAssisting3, setOpenArtAssisting3] = useState(false)
+
+  function artAssisting0Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting0(boolean)
+  }
+  function artAssisting1Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting1(boolean)
+  }
+  function artAssisting2Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting2(boolean)
+  }
+  function artAssisting3Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting3(boolean)
+  }
+
+  const artAssistingActions = [artAssisting0Action, artAssisting1Action, artAssisting2Action, artAssisting3Action]
+  const is_action = [isOpenArtAssisting0, isOpenArtAssisting1, isOpenArtAssisting2, isOpenArtAssisting3]
+
+  return (
+    <>
+
+      <div class="blank-row">
+
+      </div>
+
+      <Carousel pictures_location={art_assisting} />
+
+      <div class="row">
+        {art_assisting.map((index) =>
+          <React.Fragment>
+            <ModalVideo channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => artAssistingActions[index.action](false)} />
+            <div class="column">
+              <div class="container2" onClick={(e) => {
+                e.stopPropagation()
+                artAssistingActions[index.action](true)
+              }}>
+                <div class="overlay">
+
+                  <img src={index.image}></img>
+                  <div class="text-header">{index.header}</div>
+                  <div class="text-footer">{index.text}</div>
+                </div>
+
+              </div>
+            </div>
+          </React.Fragment>
+        )}
+
+        <div class="column">
+        </div>
+
+
+
+
+      </div>
+      <NavBar art_assisting="frame__link_white" production_design="frame__link" render_art="frame__link" />
+    </>)
+}
+
 function NavBar({ art_assisting, production_design, render_art }) {
   return (
     <div className="frame">
       <h1 className="frame__title">Jimmy Van Twest | Art Department</h1>
       <div className="frame__links">
-        <a className={art_assisting} href="#01">
+        <a className={art_assisting} href="art_assisting">
           Art Assisting
     </a>
         <a className={production_design} href="production_design">
@@ -226,23 +297,7 @@ function NavBar({ art_assisting, production_design, render_art }) {
   )
 }
 
-function InitialPage() {
-  const scrollArea = useRef()
-  const onScroll = e => (state.top.current = e.target.scrollTop)
-  useEffect(() => void onScroll({ target: scrollArea.current }), [])
-  const [isOpen, setOpen] = useState(false)
-  const paragraphs = state.paragraphs
-  return (
-    <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
-      {new Array(state.sections).fill().map((_, index) => (
-        <div id={"0" + index + "_click"} >
-          <div key={index} id={"0" + index} style={{ height: `${(state.pages / state.sections) * 100}vh` }} />
 
-        </div>
-      ))}
-    </div>
-  )
-}
 
 function Home() {
   return (
@@ -261,7 +316,7 @@ function App() {
 
           <Route exact path="/" component={Home} />
           <Route exact path="/production_design" component={ProductionDesign} />
-          {/* <Route exact path ="/art_assisting" component={ArtAssisting} /> */}
+          <Route exact path="/art_assisting" component={ArtAssisting} />
         </Switch>
       </Router>
       {/* <InitialPage /> */}
