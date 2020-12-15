@@ -123,8 +123,21 @@ body {
   background: #0c0f13;
   overflow: scroll;
   font-family: 'Playfair Display', serif;
-  color: #8b8b8b;
+  color: white;
   font-size: 0.9rem;
+}
+
+nav {
+  z-index: 3;
+}
+
+.navbar-light .navbar-brand {
+  font-size: 1em;
+  color: white;
+}
+
+.navbar-nav .mr-auto {
+  margin: 1rem 0;
 }
 
 a {
@@ -165,13 +178,13 @@ a:hover {
 
 .heading {
   position: absolute;
-  width: 100%;
   height: 50px;
   top: 50%;
   left: 25%;
   margin-left: -50px; /* margin is -0.5 * dimension */
   margin-top: -25px; 
   z-index: 1;
+  font-weight: bold;
 }
 
 
@@ -231,6 +244,14 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 
+#navbarSupportedContent {
+  right: 20px;
+  position: absolute;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white !important;
+}
 .frame {
   position: absolute;
   width: 100%;

@@ -170,10 +170,8 @@ function ProductionDesign() {
 
   return (
     <>
+      <NavBar  />
 
-      <div class="blank-row">
-
-      </div>
 
       <Carousel pictures_location={production_design} />
 
@@ -205,7 +203,6 @@ function ProductionDesign() {
 
 
       </div>
-      <NavBar art_assisting="frame__link" production_design="frame__link_white" render_art="frame__link" />
     </>)
 }
 
@@ -240,10 +237,8 @@ function ArtAssisting() {
 
   return (
     <>
+        <NavBar />
 
-      <div class="blank-row">
-
-      </div>
       <div class="gallery">
 
         {/* <Carousel pictures_location={art_assisting} /> */}
@@ -270,34 +265,39 @@ function ArtAssisting() {
 
 
       </div>
-      <NavBar art_assisting="frame__link_white" production_design="frame__link" render_art="frame__link" />
     </>)
 }
 
-function NavBar({ art_assisting, production_design, render_art }) {
+function NavBar() {
   return (
-    <div className="frame">
-      <h1 className="frame__title">Jimmy Van Twest | Art Department</h1>
-      <div className="frame__links">
-        <a className={art_assisting} href="art_assisting">
-          Art Assisting
-    </a>
-        <a className={production_design} href="production_design">
-          Production Design
-    </a>
-        <a className={render_art} href="  ">
-          Render Art
-    </a>
-      </div>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand" href="/">Jimmy Van Twest | Art Department</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/art_assisting">Art Assisting</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/production_design">Production Design</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/render_art">Render Art</a>
+          </li>
+        </ul>
+  </div>
+</nav>
   )
 }
 
-function Heading({ text }) {
+function Heading({ text}) {
   return (
-    <div className="heading">
-      <h1>{text}</h1>
-    </div>
+      <div className="heading">
+        <h1>{text}</h1>
+      </div>
   )
 }
 
@@ -305,27 +305,27 @@ function Heading({ text }) {
 
 function Home() {
   return (
-    <>
-    <NavBar art_assisting="frame__link" production_design="frame__link" render_art="frame__link" />
-    <Heading text="Jimmy Van Twest | Art Department" />
-    <ul class="cb-slideshow">
-    <li>
-      <span>Image 01</span>
-    </li>
-    <li>
-      <span>Image 02</span>
-    </li>
-    <li>
-      <span>Image 03</span>
-    </li>
-    <li>
-      <span>Image 04</span>
-    </li>
-    <li>
-      <span>Image 05</span>
-    </li>
-  </ul>
- </>
+      <>
+        <NavBar  />
+        <Heading text="Jimmy Van Twest | Art Department" />
+        <ul class="cb-slideshow">
+          <li>
+            <span>Image 01</span>
+          </li>
+          <li>
+            <span>Image 02</span>
+          </li>
+          <li>
+            <span>Image 03</span>
+          </li>
+          <li>
+            <span>Image 04</span>
+          </li>
+          <li>
+            <span>Image 05</span>
+          </li>
+        </ul>
+      </>
   )
 }
 
@@ -333,19 +333,19 @@ function App() {
 
 
   return (
-    <>
+      <>
 
-      <Router >
-        <Switch >
+        <Router >
+          <Switch >
 
-          <Route exact path="/" component={Home} />
-          <Route exact path="/production_design" component={ProductionDesign} />
-          <Route exact path="/art_assisting" component={ArtAssisting} />
-        </Switch>
-      </Router>
-    
+            <Route exact path="/" component={Home} />
+            <Route exact path="/production_design" component={ProductionDesign} />
+            <Route exact path="/art_assisting" component={ArtAssisting} />
+          </Switch>
+        </Router>
 
-    </>
+
+      </>
   )
 }
 
