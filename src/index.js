@@ -113,27 +113,28 @@ function Startup() {
 //     )
 // }
 
-function Carousel({pictures_location}) {
+function Carousel({ pictures_location }) {
   const pictures = pictures_location
   return (
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
-      {pictures.map((picture) =>
-        {if (picture.action == 0) {
-         return( <div class="carousel-item active">
-          <div class="crop">
-            <img class="d-block w-100" src={picture.image} alt="First slide"  ></img>
-          </div>
-        </div>)
-        } else {
-         return( <div class="carousel-item">
-          <div class="crop">
-            <img class="d-block w-100" src={picture.image} alt="Second slide" ></img>
-          </div>
-        </div>)
-        }}
-      )}
-   
+        {pictures.map((picture) => {
+          if (picture.action == 0) {
+            return (<div class="carousel-item active">
+              <div class="crop">
+                <img class="d-block w-100" src={picture.image} alt="First slide"  ></img>
+              </div>
+            </div>)
+          } else {
+            return (<div class="carousel-item">
+              <div class="crop">
+                <img class="d-block w-100" src={picture.image} alt="Second slide" ></img>
+              </div>
+            </div>)
+          }
+        }
+        )}
+
       </div>
       <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -243,32 +244,27 @@ function ArtAssisting() {
       <div class="blank-row">
 
       </div>
+      <div class="gallery">
 
-      <Carousel pictures_location={art_assisting} />
+        {/* <Carousel pictures_location={art_assisting} /> */}
 
-      <div class="row">
         {art_assisting.map((index) =>
           <React.Fragment>
             <ModalVideo channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => artAssistingActions[index.action](false)} />
-            <div class="column">
-              <div class="container2" onClick={(e) => {
-                e.stopPropagation()
-                artAssistingActions[index.action](true)
-              }}>
-                <div class="overlay">
+            <figure class={index.css + index.action} onClick={(e) => {
+              e.stopPropagation()
+              artAssistingActions[index.action](true)
+            }}>
+              <div class="overlay">
 
-                  <img src={index.image}></img>
-                  <div class="text-header">{index.header}</div>
-                  <div class="text-footer">{index.text}</div>
-                </div>
-
+                <img class="gallery_img" src={index.image}></img>
+                <div class="text-header">{index.header}</div>
+                <div class="text-footer">{index.text}</div>
               </div>
-            </div>
+
+            </figure>
           </React.Fragment>
         )}
-
-        <div class="column">
-        </div>
 
 
 
@@ -319,7 +315,23 @@ function App() {
           <Route exact path="/art_assisting" component={ArtAssisting} />
         </Switch>
       </Router>
-      {/* <InitialPage /> */}
+      <ul class="cb-slideshow">
+        <li>
+          <span>Image 01</span>
+        </li>
+        <li>
+          <span>Image 02</span>
+        </li>
+        <li>
+          <span>Image 03</span>
+        </li>
+        <li>
+          <span>Image 04</span>
+        </li>
+        <li>
+          <span>Image 05</span>
+        </li>
+      </ul>
 
     </>
   )

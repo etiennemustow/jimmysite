@@ -14,7 +14,8 @@ const state = {
       text: "directed by Maxim Kelly",
       video: "380030498",
       channel: "vimeo",
-      action: 0
+      action: 0,
+      css: "gallery__item gallery__item--"
     },
     {
       header: "Finn Foxell- Make It Count",
@@ -23,11 +24,13 @@ const state = {
       "directed by Milo Blake",
       video: "450474177",
       channel: "vimeo",
-      action: 1
+      action: 1,
+      css: "gallery__item gallery__item--"
     }
   ],
   art_assisting: [
     {
+      css: "gallery__item gallery__item--",
       header: "Adidas x Superstan",
       image: "/adidassuperstan.jpg",
       text: "designed by Benny Casey",
@@ -36,6 +39,7 @@ const state = {
       action: 0
     },
     {
+      css: "gallery__item gallery__item--",
       header: "The Streets, IDLES - None Of Us Are Getting Out Of This Life Alive",
       image: "/thestreetsnoneofus.jpg",
       text:
@@ -45,6 +49,7 @@ const state = {
       action: 1
     },
     {
+      css: "gallery__item gallery__item--",
       header: "London Grammar - Californian Soil",
       image: "/londongrammar.png",
       text: "designed by Jakob Gierse",
@@ -53,6 +58,7 @@ const state = {
       action: 2
     },
     {
+      css: "gallery__item gallery__item--",
       header: "SL - Little Bird",
       image: "/sllittlebird.jpg",
       text:
