@@ -66,7 +66,114 @@ const state = {
       video: "ZJvDBltodUE",
       channel: "youtube",
       action: 3
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Rudimental - Come Over",
+      image: "/rudimentalcomeover.jpg",
+      text: "designed by Louis Simonon",
+      video: "464147830",
+      channel: "vimeo",
+      action: 4
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Stand Atlantic - Jurassic Park",
+      image: "/standatlanticjurassicpark.jpg",
+      text: "designed by Benny Casey",
+      video: "440368058",
+      channel: "vimeo",
+      action: 5
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Jones - Camera Flash",
+      image: "/jonescameraflash.jpg",
+      text:
+      "designed by Benny Casey",
+      video: "446441649",
+      channel: "vimeo",
+      action: 6
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Stand Atlantic - Blurry",
+      image: "/standatlanticblurry.jpg",
+      text:
+      "designed by Benny Casey",
+      video: "445049420",
+      channel: "vimeo",
+      action: 7
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Farfetch: Open Doors To A World of Fashion",
+      image: "/farfetch.jpg",
+      text: "designed by Emma Roach",
+      video: "qLPPGeTIuds",
+      channel: "youtube",
+      action: 8
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Nines - Clout",
+      image: "/nineclout.png",
+      text: "designed by Jakob Gierse",
+      video: "kgUV1MaD_M8",
+      channel: "youtube",
+      action: 9
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Nines - Airplane Mode",
+      image: "/ninesairplanemode.jpg",
+      text:
+      "designed by Jakob Gierse",
+      video: "XPZgehksWo4",
+      channel: "youtube",
+      action: 10
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Boston Bun - Don't Wanna Dance",
+      image: "/bostonbun.jpg",
+      text:
+      "designed by Elena Muntoni",
+      video: "IogVoBaYmvA",
+      channel: "youtube",
+      action: 11
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Aaron Taylor - Flowers",
+      image: "/aarontaylorflowers.jpg",
+      text:
+      "designed by Elena Muntoni",
+      video: "t0LemwCvZq8",
+      channel: "youtube",
+      action: 12
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Jeshi - Mask On",
+      image: "/jeshimaskon.jpg",
+      text:
+      "designed by Liz El-Kadhi",
+      video: "-7LtIlQRwBg",
+      channel: "youtube",
+      action: 13
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Current Account Switch Service Ad",
+      image: "/currentaccount.png",
+      text:
+      "designed by Benny Casey",
+      video: "vWSC1Z8iCyc",
+      channel: "youtube",
+      action: 14
     }
+
   ]
 },
   stripes: [
