@@ -293,11 +293,39 @@ function NavBar({ art_assisting, production_design, render_art }) {
   )
 }
 
+function Heading({ text }) {
+  return (
+    <div className="heading">
+      <h1>{text}</h1>
+    </div>
+  )
+}
+
 
 
 function Home() {
   return (
+    <>
     <NavBar art_assisting="frame__link" production_design="frame__link" render_art="frame__link" />
+    <Heading text="Jimmy Van Twest | Art Department" />
+    <ul class="cb-slideshow">
+    <li>
+      <span>Image 01</span>
+    </li>
+    <li>
+      <span>Image 02</span>
+    </li>
+    <li>
+      <span>Image 03</span>
+    </li>
+    <li>
+      <span>Image 04</span>
+    </li>
+    <li>
+      <span>Image 05</span>
+    </li>
+  </ul>
+ </>
   )
 }
 
@@ -315,23 +343,7 @@ function App() {
           <Route exact path="/art_assisting" component={ArtAssisting} />
         </Switch>
       </Router>
-      <ul class="cb-slideshow">
-        <li>
-          <span>Image 01</span>
-        </li>
-        <li>
-          <span>Image 02</span>
-        </li>
-        <li>
-          <span>Image 03</span>
-        </li>
-        <li>
-          <span>Image 04</span>
-        </li>
-        <li>
-          <span>Image 05</span>
-        </li>
-      </ul>
+    
 
     </>
   )

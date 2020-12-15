@@ -75,6 +75,12 @@
   animation-delay: 15s; 
 }
 
+.cb-slideshow li div h3 { 
+  /* font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif; */
+  font-size: 240px;
+  padding: 0;
+  line-height: 200px; 
+}
 
 .no-cssanimations .cb-slideshow li span{
 	opacity: 1;
@@ -157,10 +163,16 @@ a:hover {
   z-index: 10000000;
 }
 
-.container2 {
-  /* position: relative; */
-
+.heading {
+  position: absolute;
+  /* width: 100%;
+  top: 0;
+  left: 0;*/
+  padding: 14rem; 
+  z-index: 1;
+  font-size: 100%;
 }
+
 
 .overlay {
   /* opacity: 1; */
