@@ -28,6 +28,92 @@ const state = {
       css: "gallery__item gallery__item--"
     }
   ],
+  render_art: {
+    apartment: [
+    {
+    header: "80’s New York Apartment Interpretation. 2020.",
+    image: "/render_art/blonde.png",
+    text: "designed by me.",
+    action: 0,
+    action_icon: 0,
+    css: "gallery__item gallery__item--"
+  },
+  {
+    header: "80’s New York Apartment Interpretation. 2020.",
+    image: "/render_art/blonde2.png",
+    text: "designed by me.",
+    action: 1,
+    css: "gallery__item gallery__item--"
+  },
+  {
+    header: "80’s New York Apartment Interpretation. 2020.",
+    image: "/render_art/blonde3.png",
+    text: "designed by me.",
+    action: 2,
+    css: "gallery__item gallery__item--"
+  },
+  {
+    header: "80’s New York Apartment Interpretation. 2020.",
+    image: "/render_art/blonde4.png",
+    text: "designed by me.",
+    action: 3,
+    css: "gallery__item gallery__item--"
+  },
+  {
+    header: "80’s New York Apartment Interpretation. 2020.",
+    image: "/render_art/blonde5.png",
+    text: "designed by me.",
+    action: 3,
+    css: "gallery__item gallery__item--"
+  }],
+  gallery: [
+    {
+    header: "Gallery Experiment. 2019.",
+    image: "/render_art/gallery.JPG",
+    text: "designed by me.",
+    action: 0,
+    action_icon: 1,
+    css: "gallery__item gallery__item--"
+  },
+  {
+    header: "Gallery Experiment. 2019.",
+    image: "/render_art/gallery2.JPG",
+    text: "designed by me.",
+    action: 1,
+    css: "gallery__item gallery__item--"
+  },
+  {
+    header: "Gallery Experiment. 2019.",
+    image: "/render_art/gallery3.JPG",
+    text: "designed by me.",
+    action: 2,
+    css: "gallery__item gallery__item--"
+  }
+],
+smart_energy: [
+  {
+  header: "Smart Energy GB Commercial",
+  image: "/render_art/still.jpg",
+  text: "designed by Tim Gibson.",
+  action: 0,
+  action_icon: 2,
+  css: "gallery__item gallery__item--"
+},
+{
+  header: "Gallery Experiment. 2019.",
+  image: "/render_art/still2.jpg",
+  text: "designed by me.",
+  action: 1,
+  css: "gallery__item gallery__item--"
+},
+{
+  header: "Smart Energy GB Commercial",
+  image: "/render_art/still3.jpg",
+  text: "designed by Tim Gibson",
+  action: 2,
+  css: "gallery__item gallery__item--"
+}
+]},
   art_assisting: [
     {
       css: "gallery__item gallery__item--",
@@ -172,6 +258,16 @@ const state = {
       video: "vWSC1Z8iCyc",
       channel: "youtube",
       action: 14
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Flohio, Clara Amfo and Shaquille-Aaron Keith discuss womanhood, Blackness and artistry",
+      image: "/flohio.jpeg",
+      text:
+      "designed by Ibby Njoya",
+      video: "-7lGjE9zzOA",
+      channel: "youtube",
+      action: 15
     }
 
   ]

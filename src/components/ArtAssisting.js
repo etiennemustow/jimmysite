@@ -1,59 +1,135 @@
-import React, { Component } from 'react';
-import Fade from 'react-reveal/Fade';
-import Navbar from './Navbar'
-import About from './About';
-import Contact from './Contact';
+import ModalVideo from 'react-modal-video'
+import React, { useState } from "react"
+import state from "../store"
+import NavBar from "./NavBar"
 
-
-
-class ArtAssisting extends Component {
-    state = {}
-
-    render() {
-        return (       
-        <div>
-        <div className = "App-header" > 
-        <header>
-            <h1>
-                jimmyvantwest | art assisting </h1>
-        </header>
-        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-        <Fade bottom>
-        <iframe src="https://player.vimeo.com/video/419372557?color=ffffff&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <p><a href="https://vimeo.com/419372557">Adidas Super Stan</a> directed by Benny Casey</p>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/SIZ7HXooV20" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><a href="https://www.youtube.com/SIZ7HXooV20">The Streets, IDLES - None Of Us Are Getting Out Of This Life Alive</a> designed by Bon Walsh</p>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/Pbwaq0E80hQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><a href="https://www.youtube.com/SIZ7HXooV20">London Grammar - Californian Soil</a> designed by Jakob Gierse</p>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/ZJvDBltodUE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><a href="https://www.youtube.com/SIZ7HXooV20">SL - Little Bird</a> designed by Jakob Gierse</p>
-        <iframe src="https://player.vimeo.com/video/464147830" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <p><a href="https://vimeo.com/464147830">Rudimental ft Anne Marie and Tion Wayne - Come Over</a> designed by Louis Simonon</p>
-        <iframe src="https://player.vimeo.com/video/446441649?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <p><a href="https://vimeo.com/446441649">MUSIC PROMO: JONES &quot;CAMERA FLASH&quot;</a> designed by Benny Casey</p>
-        <iframe src="https://player.vimeo.com/video/440368058?color=c0c1c3&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <p><a href="https://vimeo.com/440368058">Stand Atlantic - Jurassic Park</a> designed by Benny Casey</p>
-        <iframe src="https://player.vimeo.com/video/445049420?color=c0c1c3&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <p><a href="https://vimeo.com/445049420">Stand Atlantic - Blurry</a> designed by Benny Casey</p>
-        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FFarfetch%2Fvideos%2F347459069943097%2F&show_text=false&width=560" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <p><a href="https://vimeo.com/445049420">Farfetch x Open doors to a World of Fashion</a>  designed by Emma Roach</p>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/kgUV1MaD_M8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><a href="https://vimeo.com/445049420">Nines - Clout</a>  designed by Jakob Gierse</p>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/XPZgehksWo4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><a href="https://vimeo.com/445049420">Nines - Airplane Mode</a>  designed by Jakob Gierse</p>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/IogVoBaYmvA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><a href="https://vimeo.com/445049420">Boston Bun - Don't Wanna Dance</a>  designed by Elena Muntoni</p>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/t0LemwCvZq8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><a href="https://vimeo.com/445049420">Aaron Taylor - Flowers</a>  designed by Elena Muntoni</p>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/-7LtIlQRwBg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><a href="https://vimeo.com/445049420">Jeshi - Mask On</a>  designed by Liz El-Kadhi</p>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/vWSC1Z8iCyc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p><a href="https://vimeo.com/445049420">Current Account Switch Service Advert</a>  designed by Benny Casey</p>
-
-        </Fade>
-        </div>
-</div>);
+function ArtAssisting() {
+    const art_assisting = state.paragraphs.art_assisting
+  
+    const [isOpenArtAssisting0, setOpenArtAssisting0] = useState(false)
+    const [isOpenArtAssisting1, setOpenArtAssisting1] = useState(false)
+    const [isOpenArtAssisting2, setOpenArtAssisting2] = useState(false)
+    const [isOpenArtAssisting3, setOpenArtAssisting3] = useState(false)
+    const [isOpenArtAssisting4, setOpenArtAssisting4] = useState(false)
+    const [isOpenArtAssisting5, setOpenArtAssisting5] = useState(false)
+    const [isOpenArtAssisting6, setOpenArtAssisting6] = useState(false)
+    const [isOpenArtAssisting7, setOpenArtAssisting7] = useState(false)
+    const [isOpenArtAssisting8, setOpenArtAssisting8] = useState(false)
+    const [isOpenArtAssisting9, setOpenArtAssisting9] = useState(false)
+    const [isOpenArtAssisting10, setOpenArtAssisting10] = useState(false)
+    const [isOpenArtAssisting11, setOpenArtAssisting11] = useState(false)
+    const [isOpenArtAssisting12, setOpenArtAssisting12] = useState(false)
+    const [isOpenArtAssisting13, setOpenArtAssisting13] = useState(false)
+    const [isOpenArtAssisting14, setOpenArtAssisting14] = useState(false)
+  
+  
+  
+    function artAssisting0Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting0(boolean)
     }
-}
+    function artAssisting1Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting1(boolean)
+    }
+    function artAssisting2Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting2(boolean)
+    }
+    function artAssisting3Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting3(boolean)
+    }
+  
+    function artAssisting4Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting4(boolean)
+    }
+  
+    function artAssisting5Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting5(boolean)
+    }
+  
+    function artAssisting6Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting6(boolean)
+    }
+  
+    function artAssisting7Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting7(boolean)
+    }
+  
+    function artAssisting8Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting8(boolean)
+    }
+    function artAssisting9Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting9(boolean)
+    }
+  
+    function artAssisting10Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting10(boolean)
+    }
+  
+    function artAssisting11Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting11(boolean)
+    }
+  
+    function artAssisting12Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting12(boolean)
+    }
+  
+    function artAssisting13Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting13(boolean)
+    }
+  
+    function artAssisting14Action(boolean) {
+      console.log("CLICKED")
+      setOpenArtAssisting14(boolean)
+    }
+  
+  
+  
+  
+    const artAssistingActions = [artAssisting0Action, artAssisting1Action, artAssisting2Action, artAssisting3Action, artAssisting4Action, artAssisting5Action, artAssisting6Action, artAssisting7Action, artAssisting8Action, artAssisting9Action, artAssisting10Action, artAssisting11Action, artAssisting12Action, artAssisting13Action, artAssisting14Action]
+    const is_action = [isOpenArtAssisting0, isOpenArtAssisting1, isOpenArtAssisting2, isOpenArtAssisting3, isOpenArtAssisting4, isOpenArtAssisting5, isOpenArtAssisting6, isOpenArtAssisting7, isOpenArtAssisting8, isOpenArtAssisting9, isOpenArtAssisting10, isOpenArtAssisting11, isOpenArtAssisting12, isOpenArtAssisting13, isOpenArtAssisting14]
+  
+    return (
+      <>
+          <NavBar art_assisting="active_tab" />
+  
+        <div class="gallery">
+  
+          {art_assisting.map((index) =>
+            <React.Fragment>
+              <ModalVideo channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => artAssistingActions[index.action](false)} />
+              <figure class={index.css + index.action} onClick={(e) => {
+                e.stopPropagation()
+                artAssistingActions[index.action](true)
+              }}>
+                <div class="overlay">
+  
+                  <img class="gallery__img" src={index.image}></img>
+                  <div class="text-header">{index.header}</div>
+                  <div class="text-footer">{index.text}</div>
+                </div>
+  
+              </figure>
+            </React.Fragment>
+          )}
+  
+  
+  
+  
+        </div>
+      </>)
+  }
 
 export default ArtAssisting;

@@ -16,102 +16,14 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import ArtAssisting from "./components/ArtAssisting.js";
+import NavBar from "./components/NavBar.js"
 
 function Startup() {
   const ref = useRef()
   useFrame(() => (ref.current.material.opacity = lerp(ref.current.material.opacity, 0, 0.025)))
   return <Plane ref={ref} color="#0e0e0f" position={[0, 0, 200]} scale={[100, 100, 1]} />
 }
-
-// function Paragraph({ image, index, offset, factor, header, aspect, text }) {
-//   const [isOpen, setOpen] = useState(false)
-
-//   const { contentMaxWidth: w, canvasWidth, margin, mobile } = useBlock()
-//   const size = aspect < 1 && !mobile ? 0.65 : 1
-//   const alignRight = (canvasWidth - w * size - margin) / 2
-//   const pixelWidth = w * state.zoom * size
-//   const left = !(index % 2)
-//   const color = index % 2 ? "#D40749" : "#2FE8C3"
-//   return (
-
-//     <Block factor={factor} offset={offset}>
-//       <group position={[left ? -alignRight : alignRight, 0, 0]}>
-//         {/* <Dom onClick={()=> setOpen(true)} > */}
-//        <Plane map={image} args={[1, 1, 32, 32]} shift={75} size={size} aspect={aspect} scale={[w * size, (w * size) / aspect, 1]} frustumCulled={false} />
-//         {/* </Dom> */}
-
-//         <Dom
-//           style={{ width: pixelWidth / (mobile ? 1 : 2), textAlign: left ? "left" : "right" }}
-//           position={[left || mobile ? (-w * size) / 2 : 0, (-w * size) / 2 / aspect - 0.4, 1]}>
-//           <div tabIndex={index}>{text}</div>
-//         </Dom>
-//         <Text left={left} right={!left} size={w * 0.04} color={color} top position={[((left ? -w : w) * size) / 2, (w * size) / aspect / 2 + 0.5, -1]}>
-//           {header}
-//         </Text>
-//         <Block factor={0.2}>
-//           <Text opacity={0.5} size={w * 0.1} color="#1A1E2A" position={[((left ? w : -w) / 2) * size, (w * size) / aspect / 1.5, -10]}>
-//             click to view
-//           </Text>
-//         </Block>
-//       </group> 
-
-//     </Block>
-
-//   )
-// }
-
-// function Content() {
-//   const images = useLoader(
-//     TextureLoader,
-//     state.paragraphs.map(({ image }) => image)
-//   )
-//   const [isOpen, setOpen] = useState(false)
-//   useMemo(() => images.forEach(texture => (texture.minFilter = LinearFilter)), [images])
-//   const { contentMaxWidth: w, canvasWidth, canvasHeight, mobile } = useBlock()
-
-//   return (
-//     <>
-//       <Block factor={1} offset={0}>
-//         <Block factor={1.2}>
-//           <Text left size={w * 0.08} position={[-w / 3.2, 0.5, -1]} color="#d40749">
-//             PORTFOLIO
-//           </Text>
-//         </Block>
-//         <Block factor={1.0}>
-//           <Dom position={[-w / 3.2, -w * 0.08 + 0.25, -1]}>JIMMY VAN TWEST{mobile ? <br /> : " "}| ART DEPARTMENT</Dom>
-//         </Block>
-//       </Block>
-//       <Block factor={1.2}>
-//           <Text left size={w * 0.07} position={[-w / 1.3, -4.5, -1]} color="#d40749">
-//             Art Assisting
-//           </Text>
-//         </Block>
-//       <Block factor={1.2} offset={5.7}>
-//         <MultilineText top left size={w * 0.15} lineHeight={w / 5} position={[-w / 3.5, 0, -1]} color="#2fe8c3" text={"four\nzero\nzero"} />
-//       </Block>
-//       {state.paragraphs.map((props, index) => (
-//         <Paragraph key={index} index={index} {...props} image={images[index]} />
-//       ))}
-//       {state.stripes.map(({ offset, color, height }, index) => (
-//         <Block key={index} factor={-1.5} offset={offset}>
-//           <Plane args={[50, height, 32, 32]} shift={-4} color={color} rotation={[0, 0, Math.PI / 8]} position={[0, 0, -10]} />
-//         </Block>
-//       ))}
-//       <Block factor={1.25} offset={8}>
-//         <Dom className="bottom-left" position={[-canvasWidth / 2, -canvasHeight / 2, 0]}>
-//           Culture is not your friend.
-//         </Dom>
-//       </Block>
-//     </>
-//   )
-// }
-
-// function ModalVideoElement({clicked, paragraph}){
-//   const [isOpen, setOpen] = useState(false)
-//     console.log("it reached")
-//     return (
-//     )
-// }
 
 function Carousel({ pictures_location }) {
   const pictures = pictures_location
@@ -148,6 +60,7 @@ function Carousel({ pictures_location }) {
   )
 }
 
+
 function ProductionDesign() {
   const production_design = state.paragraphs.production_design
 
@@ -170,155 +83,17 @@ function ProductionDesign() {
 
   return (
     <>
-      <NavBar  />
+      <NavBar production_design="active_tab" />
 
-
-      <Carousel pictures_location={production_design} />
-
-      <div class="row">
-        {production_design.map((index) =>
-          <React.Fragment>
-            <ModalVideo channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => prodDesignActions[index.action](false)} />
-            <div class="column">
-              <div class="container2" onClick={(e) => {
-                e.stopPropagation()
-                prodDesignActions[index.action](true)
-              }}>
-                <div class="overlay">
-
-                  <img src={index.image}></img>
-                  <div class="text-header">{index.header}</div>
-                  <div class="text-footer">{index.text}</div>
-                </div>
-
-              </div>
-            </div>
-          </React.Fragment>
-        )}
-
-        <div class="column">
-        </div>
-
-
-
-
-      </div>
-    </>)
-}
-
-function ArtAssisting() {
-  const art_assisting = state.paragraphs.art_assisting
-
-  const [isOpen, setOpen] = useState(false)
-  const [isOpenArtAssisting0, setOpenArtAssisting0] = useState(false)
-  const [isOpenArtAssisting1, setOpenArtAssisting1] = useState(false)
-  const [isOpenArtAssisting2, setOpenArtAssisting2] = useState(false)
-  const [isOpenArtAssisting3, setOpenArtAssisting3] = useState(false)
-  const [isOpenArtAssisting4, setOpenArtAssisting4] = useState(false)
-  const [isOpenArtAssisting5, setOpenArtAssisting5] = useState(false)
-  const [isOpenArtAssisting6, setOpenArtAssisting6] = useState(false)
-  const [isOpenArtAssisting7, setOpenArtAssisting7] = useState(false)
-  const [isOpenArtAssisting8, setOpenArtAssisting8] = useState(false)
-  const [isOpenArtAssisting9, setOpenArtAssisting9] = useState(false)
-  const [isOpenArtAssisting10, setOpenArtAssisting10] = useState(false)
-  const [isOpenArtAssisting11, setOpenArtAssisting11] = useState(false)
-  const [isOpenArtAssisting12, setOpenArtAssisting12] = useState(false)
-  const [isOpenArtAssisting13, setOpenArtAssisting13] = useState(false)
-  const [isOpenArtAssisting14, setOpenArtAssisting14] = useState(false)
-
-
-
-  function artAssisting0Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting0(boolean)
-  }
-  function artAssisting1Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting1(boolean)
-  }
-  function artAssisting2Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting2(boolean)
-  }
-  function artAssisting3Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting3(boolean)
-  }
-
-  function artAssisting4Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting4(boolean)
-  }
-
-  function artAssisting5Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting5(boolean)
-  }
-
-  function artAssisting6Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting6(boolean)
-  }
-
-  function artAssisting7Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting7(boolean)
-  }
-
-  function artAssisting8Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting8(boolean)
-  }
-  function artAssisting9Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting9(boolean)
-  }
-
-  function artAssisting10Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting10(boolean)
-  }
-
-  function artAssisting11Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting11(boolean)
-  }
-
-  function artAssisting12Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting12(boolean)
-  }
-
-  function artAssisting13Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting13(boolean)
-  }
-
-  function artAssisting14Action(boolean) {
-    console.log("CLICKED")
-    setOpenArtAssisting14(boolean)
-  }
-
-
-
-
-  const artAssistingActions = [artAssisting0Action, artAssisting1Action, artAssisting2Action, artAssisting3Action, artAssisting4Action, artAssisting5Action, artAssisting6Action, artAssisting7Action, artAssisting8Action, artAssisting9Action, artAssisting10Action, artAssisting11Action, artAssisting12Action, artAssisting13Action, artAssisting14Action]
-  const is_action = [isOpenArtAssisting0, isOpenArtAssisting1, isOpenArtAssisting2, isOpenArtAssisting3, isOpenArtAssisting4, isOpenArtAssisting5, isOpenArtAssisting6, isOpenArtAssisting7, isOpenArtAssisting8, isOpenArtAssisting9, isOpenArtAssisting10, isOpenArtAssisting11, isOpenArtAssisting12, isOpenArtAssisting13, isOpenArtAssisting14]
-
-  return (
-    <>
-        <NavBar />
 
       <div class="gallery">
 
-        {/* <Carousel pictures_location={art_assisting} /> */}
-
-        {art_assisting.map((index) =>
+        {production_design.map((index) =>
           <React.Fragment>
-            <ModalVideo channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => artAssistingActions[index.action](false)} />
+            <ModalVideo channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => prodDesignActions[index.action](false)} />
             <figure class={index.css + index.action} onClick={(e) => {
               e.stopPropagation()
-              artAssistingActions[index.action](true)
+              prodDesignActions[index.action](true)
             }}>
               <div class="overlay">
 
@@ -338,36 +113,98 @@ function ArtAssisting() {
     </>)
 }
 
-function NavBar() {
-  return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-      <a class="navbar-brand" href="/">Jimmy Van Twest | Art Department</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+function RenderArt() {
+  const render_art = state.paragraphs.render_art
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/art_assisting">Art Assisting</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/production_design">Production Design</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/render_art">Render Art</a>
-          </li>
-        </ul>
-  </div>
-</nav>
-  )
+  const renderArtActions = [openModal0, openModal1, openModal2]
+
+  function openModal0() {
+    document.getElementById("myModal0").style.display = "block";
+  }
+
+
+  function closeModal0() {
+    document.getElementById("myModal0").style.display = "none";
+  }
+
+  function openModal1() {
+    document.getElementById("myModal1").style.display = "block";
+  }
+
+
+  function closeModal1() {
+    document.getElementById("myModal1").style.display = "none";
+  }
+
+  function openModal2() {
+    document.getElementById("myModal2").style.display = "block";
+  }
+
+
+  function closeModal2() {
+    document.getElementById("myModal2").style.display = "none";
+  }
+  const render_art_icons = [render_art.apartment[0], render_art.gallery[0], render_art.smart_energy[0]]
+
+
+  return (
+    <>
+
+    <NavBar render_art="active_tab" />
+ 
+ 
+   <div class="gallery">
+ 
+     {render_art_icons.map((index) =>
+       <figure class={index.css + index.action} onClick={(e) => {
+         e.stopPropagation()
+         renderArtActions[index.action_icon]()
+       }}>
+         <div class="overlay">
+ 
+           <img class="gallery__img" src={index.image}></img>
+           <div class="text-header">{index.header}</div>
+           <div class="text-footer">{index.text}</div>
+         </div>
+ 
+       </figure>
+     )}
+ 
+ 
+ 
+ 
+   </div>
+ 
+ <div id="myModal0" class="modal">
+ <span class="close cursor" onclick="closeModal0()">&times;</span>
+ <div class="modal-content">
+       <Carousel pictures_location={render_art.apartment}/>
+ </div>
+ </div>
+
+ <div id="myModal1" class="modal">
+ <span class="close cursor" onclick="closeModal1()">&times;</span>
+ <div class="modal-content">
+       <Carousel pictures_location={render_art.gallery}/>
+ </div>
+ </div>
+
+ <div id="myModal2" class="modal">
+ <span class="close cursor" onclick="closeModal2()">&times;</span>
+ <div class="modal-content">
+       <Carousel pictures_location={render_art.smart_energy}/>
+ </div>
+ </div>
+ 
+ </>
+    )
 }
 
-function Heading({ text}) {
+function Heading({ text }) {
   return (
-      <div className="heading">
-        <h1>{text}</h1>
-      </div>
+    <div className="heading">
+      <h1>{text}</h1>
+    </div>
   )
 }
 
@@ -375,27 +212,27 @@ function Heading({ text}) {
 
 function Home() {
   return (
-      <>
-        <NavBar  />
-        <Heading text="Jimmy Van Twest | Art Department" />
-        <ul class="cb-slideshow">
-          <li>
-            <span>Image 01</span>
-          </li>
-          <li>
-            <span>Image 02</span>
-          </li>
-          <li>
-            <span>Image 03</span>
-          </li>
-          <li>
-            <span>Image 04</span>
-          </li>
-          <li>
-            <span>Image 05</span>
-          </li>
-        </ul>
-      </>
+    <>
+      <NavBar />
+      <Heading text="Jimmy Van Twest | Art Department" />
+      <ul class="cb-slideshow">
+        <li>
+          <span>Image 01</span>
+        </li>
+        <li>
+          <span>Image 02</span>
+        </li>
+        <li>
+          <span>Image 03</span>
+        </li>
+        <li>
+          <span>Image 04</span>
+        </li>
+        <li>
+          <span>Image 05</span>
+        </li>
+      </ul>
+    </>
   )
 }
 
@@ -403,19 +240,21 @@ function App() {
 
 
   return (
-      <>
+    <>
 
-        <Router >
-          <Switch >
+      <Router >
+        <Switch >
 
-            <Route exact path="/" component={Home} />
-            <Route exact path="/production_design" component={ProductionDesign} />
-            <Route exact path="/art_assisting" component={ArtAssisting} />
-          </Switch>
-        </Router>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/production_design" component={ProductionDesign} />
+          <Route exact path="/art_assisting" component={ArtAssisting} />
+          <Route exact path="/render_art" component={RenderArt} />
+
+        </Switch>
+      </Router>
 
 
-      </>
+    </>
   )
 }
 
