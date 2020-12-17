@@ -15,6 +15,12 @@ h1 { font-size: 1em;
   color: white;
 }
 
+.navbar-light .navbar-brand:hover {
+  font-size: 0.6em;
+  color: slategray;
+}
+
+
 .gallery {
   display: grid;
   grid-template-columns: auto auto;
@@ -67,6 +73,11 @@ h1 { font-size: 1em;
   .text-footer {
     font-size: 12px;
   }
+  .navbar-light .navbar-brand:hover {
+    font-size: 1em;
+    color: slategray;
+  }
+  
   
 }
 
@@ -248,13 +259,6 @@ body {
 
 nav {
   z-index: 3;
-}
-
-
-
-.navbar-light .navbar-brand:hover {
-  font-size: 1em;
-  color: slategray;
 }
 
 
