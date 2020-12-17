@@ -207,8 +207,11 @@ function Heading({ text }) {
 function Home() {
   return (
     <>
+      
       <NavBar />
+      <div className="page">
       <Heading text="Jimmy Van Twest | Art Department" />
+      </div>
       <ul className="cb-slideshow">
         <li>
           <span>Image 01</span>
@@ -226,6 +229,7 @@ function Home() {
           <span>Image 05</span>
         </li>
       </ul>
+      
     </>
   )
 }
