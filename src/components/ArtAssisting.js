@@ -105,20 +105,20 @@ function ArtAssisting() {
       <>
           <NavBar art_assisting="active_tab" />
   
-        <div class="gallery">
+        <div className="gallery">
   
           {art_assisting.map((index) =>
-            <React.Fragment>
+            <React.Fragment key={index.action}>
               <ModalVideo channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => artAssistingActions[index.action](false)} />
-              <figure class={index.css + index.action} onClick={(e) => {
+              <figure className={index.css + index.action} onClick={(e) => {
                 e.stopPropagation()
                 artAssistingActions[index.action](true)
               }}>
-                <div class="overlay">
+                <div className="overlay">
   
-                  <img class="gallery__img" src={index.image}></img>
-                  <div class="text-header">{index.header}</div>
-                  <div class="text-footer">{index.text}</div>
+                  <img className="gallery__img" src={index.image}></img>
+                  <div className="text-header">{index.header}</div>
+                  <div className="text-footer">{index.text}</div>
                 </div>
   
               </figure>

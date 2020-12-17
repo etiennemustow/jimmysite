@@ -3,9 +3,7 @@ import React, { Suspense, useEffect, useRef, useMemo, useState, setState, Fragme
 import { Canvas, Dom, useLoader, useFrame } from "react-three-fiber"
 import { TextureLoader, LinearFilter } from "three"
 import lerp from "lerp"
-import { Text, MultilineText } from "./components/Text"
 import Diamonds from "./diamonds/Diamonds"
-import Plane from "./components/Plane"
 import { Block, useBlock } from "./blocks"
 import state from "./store"
 import "./styles.css"
@@ -18,29 +16,25 @@ import {
 } from "react-router-dom";
 import ArtAssisting from "./components/ArtAssisting.js";
 import NavBar from "./components/NavBar.js"
+import { PageTransition } from '@steveeeie/react-page-transition';
 
-function Startup() {
-  const ref = useRef()
-  useFrame(() => (ref.current.material.opacity = lerp(ref.current.material.opacity, 0, 0.025)))
-  return <Plane ref={ref} color="#0e0e0f" position={[0, 0, 200]} scale={[100, 100, 1]} />
-}
 
 function Carousel({ pictures_location }) {
   const pictures = pictures_location
   return (
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-      <div class="carousel-inner">
+    <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
+      <div className="carousel-inner">
         {pictures.map((picture) => {
           if (picture.action == 0) {
-            return (<div class="carousel-item active">
-              <div class="crop">
-                <img class="d-block w-100" src={picture.image} alt="First slide"  ></img>
+            return (<div className="carousel-item active" key={picture.key + picture.action}>
+              <div className="crop">
+                <img className="d-block w-100" src={picture.image} alt="First slide"  ></img>
               </div>
             </div>)
           } else {
-            return (<div class="carousel-item">
-              <div class="crop">
-                <img class="d-block w-100" src={picture.image} alt="Second slide" ></img>
+            return (<div className="carousel-item" key={picture.key + picture.action}>
+              <div className="crop">
+                <img className="d-block w-100" src={picture.image} alt="Second slide" ></img>
               </div>
             </div>)
           }
@@ -48,13 +42,13 @@ function Carousel({ pictures_location }) {
         )}
 
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+      <a className="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+      <a className="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="sr-only">Next</span>
       </a>
     </div>
   )
@@ -86,20 +80,20 @@ function ProductionDesign() {
       <NavBar production_design="active_tab" />
 
 
-      <div class="gallery">
+      <div className="gallery">
 
         {production_design.map((index) =>
-          <React.Fragment>
-            <ModalVideo channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => prodDesignActions[index.action](false)} />
-            <figure class={index.css + index.action} onClick={(e) => {
+          <React.Fragment key={index.action}>
+            <ModalVideo height="700px" width="700px" channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => prodDesignActions[index.action](false)} />
+            <figure className={index.css + index.action} onClick={(e) => {
               e.stopPropagation()
               prodDesignActions[index.action](true)
             }}>
-              <div class="overlay">
+              <div className="overlay">
 
-                <img class="gallery__img" src={index.image}></img>
-                <div class="text-header">{index.header}</div>
-                <div class="text-footer">{index.text}</div>
+                <img className="gallery__img" src={index.image}></img>
+                <div className="text-header">{index.header}</div>
+                <div className="text-footer">{index.text}</div>
               </div>
 
             </figure>
@@ -153,18 +147,18 @@ function RenderArt() {
     <NavBar render_art="active_tab" />
  
  
-   <div class="gallery">
+   <div className="gallery">
  
      {render_art_icons.map((index) =>
-       <figure class={index.css + index.action} onClick={(e) => {
+       <figure className={index.css + index.action} key={index.action_icon} onClick={(e) => {
          e.stopPropagation()
          renderArtActions[index.action_icon]()
        }}>
-         <div class="overlay">
+         <div className="overlay">
  
-           <img class="gallery__img" src={index.image}></img>
-           <div class="text-header">{index.header}</div>
-           <div class="text-footer">{index.text}</div>
+           <img className="gallery__img" src={index.image}></img>
+           <div className="text-header">{index.header}</div>
+           <div className="text-footer">{index.text}</div>
          </div>
  
        </figure>
@@ -175,23 +169,23 @@ function RenderArt() {
  
    </div>
  
- <div id="myModal0" class="modal">
- <span class="close cursor" onclick="closeModal0()">&times;</span>
- <div class="modal-content">
+ <div id="myModal0" className="modal">
+ <span className="close cursor" >&times;</span>
+ <div className="modal-content">
        <Carousel pictures_location={render_art.apartment}/>
  </div>
  </div>
 
- <div id="myModal1" class="modal">
- <span class="close cursor" onclick="closeModal1()">&times;</span>
- <div class="modal-content">
+ <div id="myModal1" className="modal">
+ <span className="close cursor">&times;</span>
+ <div className="modal-content">
        <Carousel pictures_location={render_art.gallery}/>
  </div>
  </div>
 
- <div id="myModal2" class="modal">
- <span class="close cursor" onclick="closeModal2()">&times;</span>
- <div class="modal-content">
+ <div id="myModal2" className="modal">
+ <span className="close cursor" >&times;</span>
+ <div className="modal-content">
        <Carousel pictures_location={render_art.smart_energy}/>
  </div>
  </div>
@@ -215,7 +209,7 @@ function Home() {
     <>
       <NavBar />
       <Heading text="Jimmy Van Twest | Art Department" />
-      <ul class="cb-slideshow">
+      <ul className="cb-slideshow">
         <li>
           <span>Image 01</span>
         </li>
@@ -240,9 +234,8 @@ function App() {
 
 
   return (
-    <>
-
-      <Router >
+      <Router  >
+        
         <Switch >
 
           <Route exact path="/" component={Home} />
@@ -251,10 +244,9 @@ function App() {
           <Route exact path="/render_art" component={RenderArt} />
 
         </Switch>
+
       </Router>
-
-
-    </>
+      
   )
 }
 

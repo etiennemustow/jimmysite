@@ -32,6 +32,7 @@ const state = {
     apartment: [
     {
     header: "80’s New York Apartment Interpretation. 2020.",
+    key: "apartment",
     image: "/render_art/blonde.png",
     text: "designed by me.",
     action: 0,
@@ -40,6 +41,7 @@ const state = {
   },
   {
     header: "80’s New York Apartment Interpretation. 2020.",
+    key: "apartment",
     image: "/render_art/blonde2.png",
     text: "designed by me.",
     action: 1,
@@ -47,6 +49,7 @@ const state = {
   },
   {
     header: "80’s New York Apartment Interpretation. 2020.",
+    key: "apartment",
     image: "/render_art/blonde3.png",
     text: "designed by me.",
     action: 2,
@@ -54,6 +57,7 @@ const state = {
   },
   {
     header: "80’s New York Apartment Interpretation. 2020.",
+    key: "apartment",
     image: "/render_art/blonde4.png",
     text: "designed by me.",
     action: 3,
@@ -61,14 +65,16 @@ const state = {
   },
   {
     header: "80’s New York Apartment Interpretation. 2020.",
+    key: "apartment",
     image: "/render_art/blonde5.png",
     text: "designed by me.",
-    action: 3,
+    action: 4,
     css: "gallery__item gallery__item--"
   }],
   gallery: [
     {
     header: "Gallery Experiment. 2019.",
+    key: "gallery",
     image: "/render_art/gallery.JPG",
     text: "designed by me.",
     action: 0,
@@ -77,6 +83,7 @@ const state = {
   },
   {
     header: "Gallery Experiment. 2019.",
+    key: "gallery",
     image: "/render_art/gallery2.JPG",
     text: "designed by me.",
     action: 1,
@@ -84,6 +91,7 @@ const state = {
   },
   {
     header: "Gallery Experiment. 2019.",
+    key: "gallery",
     image: "/render_art/gallery3.JPG",
     text: "designed by me.",
     action: 2,
@@ -93,6 +101,7 @@ const state = {
 smart_energy: [
   {
   header: "Smart Energy GB Commercial",
+  key: "smart_energy",
   image: "/render_art/still.jpg",
   text: "designed by Tim Gibson.",
   action: 0,
@@ -101,6 +110,7 @@ smart_energy: [
 },
 {
   header: "Gallery Experiment. 2019.",
+  key: "smart_energy",
   image: "/render_art/still2.jpg",
   text: "designed by me.",
   action: 1,
@@ -108,6 +118,7 @@ smart_energy: [
 },
 {
   header: "Smart Energy GB Commercial",
+  key: "smart_energy",
   image: "/render_art/still3.jpg",
   text: "designed by Tim Gibson",
   action: 2,
