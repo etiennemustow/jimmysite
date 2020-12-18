@@ -6,9 +6,8 @@ class Contact extends Component {
     state = {  }
     render() { 
         return (  <div>
-        <h1 class="subheading">
                 <Fade bottom cascade> Contact.</Fade>
-        </h1>
+       
         <Fade bottom>
         <div className='contact-content'>
                 <h1>

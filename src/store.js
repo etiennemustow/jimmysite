@@ -6,6 +6,10 @@ const state = {
   sections: 9,
   pages: 8,
   zoom: 75,
+  icons: {
+    instagram: "instagram.png",
+    email: "email.png",
+  },
   paragraphs: {
     production_design: [
       {

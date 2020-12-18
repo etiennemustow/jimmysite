@@ -15,6 +15,8 @@ import {
   Route,
 } from "react-router-dom";
 import { PageTransition } from '@steveeeie/react-page-transition';
+import Fade from 'react-reveal/Fade';
+
 
 
 
@@ -118,7 +120,7 @@ function ArtAssisting() {
 
   return (
     <>
-        <NavBar art_assisting="active_tab" />
+      <NavBar art_assisting="active_tab" />
 
       <div className="gallery">
 
@@ -148,30 +150,33 @@ function ArtAssisting() {
 }
 
 
-function NavBar({art_assisting, production_design, render_art}) {
-    return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-transparent">
-        <a className="navbar-brand" href="/">Jimmy Van Twest | Art Department</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-  
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <a className="nav-link" id={art_assisting} href="/art_assisting">Art Assisting</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" id={production_design} href="/production_design">Production Design</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" id ={render_art} href="/render_art">Render Art</a>
-            </li>
-          </ul>
-    </div>
-  </nav>
-    )
-  }
+function NavBar({ art_assisting, production_design, render_art, contact }) {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a className="navbar-brand" href="/">Jimmy Van Twest | Art Department</a>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <a className="nav-link" id={art_assisting} href="/art_assisting">Art Assisting</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" id={production_design} href="/production_design">Production Design</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" id={render_art} href="/render_art">Render Art</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" id={contact} href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  )
+}
 function Carousel({ pictures_location }) {
   const pictures = pictures_location
   return (
@@ -205,6 +210,33 @@ function Carousel({ pictures_location }) {
       </a>
     </div>
   )
+}
+
+function Contact() {
+
+
+  return (
+    <>
+      <NavBar contact="active_tab" />
+
+      <div className="contact-page">
+          <div className="boxed">
+          <div className="contact-text">
+          <h2>I've worked within the art department for Commercial, Music Videos, Fashion and Film since March 2019. 
+          In working a variety of roles, notably, Art Assistant, Production Designer and Render Artist, 
+          I'm constantly learning and always strive to create exceptional sets.</h2>
+          <br></br>
+          <div className="centered-text">
+          <h2>Like my vision? Let's collaborate!</h2>
+          <div className="coloured"><h2>jimmyvantwest@gmail.com</h2></div>
+          <a href={`mailto:jimmyvantwest@gmail.com`}><img className="contact-icon" src={state.icons.email}></img></a>
+          <a href="https://www.instagram.com/jimmyvantwest"><img className="contact-icon" src={state.icons.instagram}></img></a>
+
+          </div>
+          </div>
+          </div>
+      </div>
+    </>)
 }
 
 
@@ -297,54 +329,54 @@ function RenderArt() {
   return (
     <>
 
-    <NavBar render_art="active_tab" />
- 
- 
-   <div className="gallery">
- 
-     {render_art_icons.map((index) =>
-       <figure className={index.css + index.action} key={index.action_icon} onClick={(e) => {
-         e.stopPropagation()
-         renderArtActions[index.action_icon]()
-       }}>
-         <div className="overlay">
- 
-           <img className="gallery__img" src={index.image}></img>
-           <div className="text-header">{index.header}</div>
-           <div className="text-footer">{index.text}</div>
-         </div>
- 
-       </figure>
-     )}
- 
- 
- 
- 
-   </div>
- 
- <div id="myModal0" className="modal">
- <span className="close cursor" >&times;</span>
- <div className="modal-content">
-       <Carousel pictures_location={render_art.apartment}/>
- </div>
- </div>
+      <NavBar render_art="active_tab" />
 
- <div id="myModal1" className="modal">
- <span className="close cursor">&times;</span>
- <div className="modal-content">
-       <Carousel pictures_location={render_art.gallery}/>
- </div>
- </div>
 
- <div id="myModal2" className="modal">
- <span className="close cursor" >&times;</span>
- <div className="modal-content">
-       <Carousel pictures_location={render_art.smart_energy}/>
- </div>
- </div>
- 
- </>
-    )
+      <div className="gallery">
+
+        {render_art_icons.map((index) =>
+          <figure className={index.css + index.action} key={index.action_icon} onClick={(e) => {
+            e.stopPropagation()
+            renderArtActions[index.action_icon]()
+          }}>
+            <div className="overlay">
+
+              <img className="gallery__img" src={index.image}></img>
+              <div className="text-header">{index.header}</div>
+              <div className="text-footer">{index.text}</div>
+            </div>
+
+          </figure>
+        )}
+
+
+
+
+      </div>
+
+      <div id="myModal0" className="modal">
+        <span className="close cursor" >&times;</span>
+        <div className="modal-content">
+          <Carousel pictures_location={render_art.apartment} />
+        </div>
+      </div>
+
+      <div id="myModal1" className="modal">
+        <span className="close cursor">&times;</span>
+        <div className="modal-content">
+          <Carousel pictures_location={render_art.gallery} />
+        </div>
+      </div>
+
+      <div id="myModal2" className="modal">
+        <span className="close cursor" >&times;</span>
+        <div className="modal-content">
+          <Carousel pictures_location={render_art.smart_energy} />
+        </div>
+      </div>
+
+    </>
+  )
 }
 
 function Heading({ text }) {
@@ -361,10 +393,10 @@ function Home() {
   return (
     <>
       <div className="absolute-wrapper">
-      <NavBar />
+        <NavBar />
       </div>
       <div className="page">
-      <Heading text="Jimmy Van Twest | Art Department" />
+        <Heading text="Jimmy Van Twest | Art Department" />
       </div>
       <ul className="cb-slideshow">
         <li>
@@ -383,7 +415,7 @@ function Home() {
           <span>Image 05</span>
         </li>
       </ul>
-      
+
     </>
   )
 }
@@ -392,19 +424,21 @@ function App() {
 
 
   return (
-      <Router  >
-        
-        <Switch >
+    <Router  >
 
-          <Route exact path="/" component={Home} />
-          <Route exact path="/production_design" component={ProductionDesign} />
-          <Route exact path="/art_assisting" component={ArtAssisting} />
-          <Route exact path="/render_art" component={RenderArt} />
+      <Switch >
 
-        </Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/production_design" component={ProductionDesign} />
+        <Route exact path="/art_assisting" component={ArtAssisting} />
+        <Route exact path="/render_art" component={RenderArt} />
+        <Route exact path="/contact" component={Contact} />
 
-      </Router>
-      
+
+      </Switch>
+
+    </Router>
+
   )
 }
 
