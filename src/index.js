@@ -360,8 +360,9 @@ function Heading({ text }) {
 function Home() {
   return (
     <>
-      
+      <div className="absolute-wrapper">
       <NavBar />
+      </div>
       <div className="page">
       <Heading text="Jimmy Van Twest | Art Department" />
       </div>
