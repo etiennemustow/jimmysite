@@ -239,7 +239,6 @@ function Contact() {
     </>)
 }
 
-
 function ProductionDesign() {
   const production_design = state.paragraphs.production_design
 
@@ -333,8 +332,11 @@ function RenderArt() {
 
 
       <div className="gallery">
+      <RenderArtCarousel index={render_art_icons[0]} action_function={openModal0}/>
+      <RenderArtCarousel index={render_art_icons[1]} action_function={openModal1}/>
+      <RenderArtCarousel index={render_art_icons[2]} action_function={openModal2}/>
 
-        {render_art_icons.map((index) =>
+        {/* {render_art_icons.map((index) =>
           <figure className={index.css + index.action} key={index.action_icon} onClick={(e) => {
             e.stopPropagation()
             renderArtActions[index.action_icon]()
@@ -347,35 +349,60 @@ function RenderArt() {
             </div>
 
           </figure>
-        )}
-
-
+        )} */}
 
 
       </div>
 
       <div id="myModal0" className="modal">
-        <span className="close cursor" >&times;</span>
+        <span onClick={(e) => {
+            e.stopPropagation()
+            closeModal0()
+          }} className="close cursor" >&times;</span>
         <div className="modal-content">
           <Carousel pictures_location={render_art.apartment} />
         </div>
       </div>
 
       <div id="myModal1" className="modal">
-        <span className="close cursor">&times;</span>
+        <span onClick={(e) => {
+            e.stopPropagation()
+            closeModal1()
+          }} className="close cursor">&times;</span>
         <div className="modal-content">
           <Carousel pictures_location={render_art.gallery} />
         </div>
       </div>
 
       <div id="myModal2" className="modal">
-        <span className="close cursor" >&times;</span>
+        <span onClick={(e) => {
+            e.stopPropagation()
+            closeModal2()
+          }} className="close cursor" >&times;</span>
         <div className="modal-content">
           <Carousel pictures_location={render_art.smart_energy} />
         </div>
       </div>
 
     </>
+  )
+}
+
+
+function RenderArtCarousel({index, action_function}){
+  return(
+  <figure className={index.css + index.action} key={index.action_icon} onClick={(e) => {
+    e.stopPropagation()
+    {action_function()}
+  }}>
+    <div className="overlay">
+
+      <img className="gallery__img" src={index.image}></img>
+      <div className="text-header">{index.header}</div>
+      <div className="text-footer">{index.text}</div>
+    </div>
+
+  </figure>
   )
 }
 

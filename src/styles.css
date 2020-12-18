@@ -132,7 +132,7 @@ h2 {
 }
 
 @media screen and (min-width: 23em) {
-  h1 { font-size: 1.5em;
+  h1 { font-size: 1.3em;
   }
   .navbar-light .navbar-brand {
     font-size: 0.8em;
@@ -166,7 +166,7 @@ h2 {
 }
 
 @media screen and (min-width: 25em) {
-  h1 { font-size: 1.5em;
+  h1 { font-size: 1.4em;
   }
   .navbar-light .navbar-brand {
     font-size: em;
@@ -462,7 +462,7 @@ figure {
 }
 
 .navbar-toggler {
-  background-color: rgba(71, 57, 31, 0.5);
+  background-color: rgba(139, 139, 139, 0.2);
 }
 
 
@@ -694,7 +694,7 @@ a:hover {
   margin: auto;
   padding: 0;
   width: 90%;
-  height: 90%;
+  height: 50%;
   max-width: 1200px;
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -706,7 +706,7 @@ a:hover {
 .close {
   color: white;
   position: absolute;
-  top: 10px;
+  top: 60px;
   right: 25px;
   font-size: 35px;
   font-weight: bold;
