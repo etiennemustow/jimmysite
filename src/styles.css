@@ -65,12 +65,12 @@ h1 {
 }
 
 .navbar-light .navbar-brand {
-  font-size: 0.6em;
+  font-size: 0.65em;
   color: white;
 }
 
 .navbar-light .navbar-brand:hover {
-  font-size: 0.6em;
+  font-size: 0.65em;
   color: slategray;
 }
 
@@ -107,8 +107,7 @@ h1 {
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
-  font-size: 0.7em;
-  font-weight: bolder;
+  font-size: 0.65em;
 }
 
 
@@ -165,20 +164,14 @@ h2 {
 @media screen and (min-width: 25em) {
   h1 { font-size: 1.4em;
   }
-  .navbar-light .navbar-brand {
-    font-size: 0.7em;
-    color: white;
-  }
+
   .text-header{
     font-size: 0.6em;
   }
   .text-footer {
     font-size: 0.6em;
   }
-  .navbar-light .navbar-brand:hover {
-    font-size: 0.7em;
-    color: slategray;
-  }
+
 
   h2 {
     font-size: 0.7em;
@@ -197,6 +190,21 @@ h2 {
 }
 
 @media screen and (min-width: 35em) {
+  .navbar-light .navbar-brand {
+    font-size: 1em;
+    color: white;
+  }
+
+  .navbar-light .navbar-brand:hover {
+    font-size: 1em;
+    color: slategray;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-size: 1em;
+  }
+  
   h1 { font-size: 2em;
   }
   .text-header{
@@ -291,6 +299,15 @@ h2 {
   }
   .text-footer {
     font-size: 12px;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-size: 1em;
+  }
+  
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: slategray; 
+    font-size: 1em;
   }
 
   .heading {
@@ -575,7 +592,7 @@ a:hover {
 
 
 #active_tab {
-  color: yellow;
+  color: rgba(85, 84, 84, 0.5);
 }
 
 .frame {
