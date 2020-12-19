@@ -283,8 +283,27 @@ smart_energy: [
       video: "-7lGjE9zzOA",
       channel: "youtube",
       action: 15
+    },
+    {
+      css: "gallery__item gallery__item--",
+      header: "Terry's Chocolate Orange 'Deliciously Unsquare' Commercial",
+      image: "/terrys.jpg",
+      text:
+      "designed by Tim Gibson",
+      video: "f7xuOo2DSjc",
+      channel: "youtube",
+      action: 16
+    },    
+    {
+      css: "gallery__item gallery__item--",
+      header: "River Island 'In a Bubble' Commercial",
+      image: "/inabubble.jpg",
+      text:
+      "designed by Thomas Bird",
+      video: "iKMkXp3Xs3s",
+      channel: "youtube",
+      action: 17
     }
-
   ]
 },
   stripes: [

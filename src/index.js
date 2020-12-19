@@ -38,7 +38,9 @@ function ArtAssisting() {
   const [isOpenArtAssisting12, setOpenArtAssisting12] = useState(false)
   const [isOpenArtAssisting13, setOpenArtAssisting13] = useState(false)
   const [isOpenArtAssisting14, setOpenArtAssisting14] = useState(false)
-
+  const [isOpenArtAssisting15, setOpenArtAssisting15] = useState(false)
+  const [isOpenArtAssisting16, setOpenArtAssisting16] = useState(false)
+  const [isOpenArtAssisting17, setOpenArtAssisting17] = useState(false)
 
 
   function artAssisting0Action(boolean) {
@@ -113,10 +115,27 @@ function ArtAssisting() {
   }
 
 
+  function artAssisting15Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting15(boolean)
+  }
 
+  function artAssisting16Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting16(boolean)
 
-  const artAssistingActions = [artAssisting0Action, artAssisting1Action, artAssisting2Action, artAssisting3Action, artAssisting4Action, artAssisting5Action, artAssisting6Action, artAssisting7Action, artAssisting8Action, artAssisting9Action, artAssisting10Action, artAssisting11Action, artAssisting12Action, artAssisting13Action, artAssisting14Action]
-  const is_action = [isOpenArtAssisting0, isOpenArtAssisting1, isOpenArtAssisting2, isOpenArtAssisting3, isOpenArtAssisting4, isOpenArtAssisting5, isOpenArtAssisting6, isOpenArtAssisting7, isOpenArtAssisting8, isOpenArtAssisting9, isOpenArtAssisting10, isOpenArtAssisting11, isOpenArtAssisting12, isOpenArtAssisting13, isOpenArtAssisting14]
+  }  function artAssisting17Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting17(boolean)
+  }
+  const artAssistingActions = [artAssisting0Action, artAssisting1Action, artAssisting2Action, artAssisting3Action, artAssisting4Action, artAssisting5Action, 
+    artAssisting6Action, artAssisting7Action, artAssisting8Action, artAssisting9Action, artAssisting10Action, 
+    artAssisting11Action, artAssisting12Action, artAssisting13Action, artAssisting14Action, artAssisting15Action, 
+  artAssisting16Action, artAssisting17Action]
+  const is_action = [isOpenArtAssisting0, isOpenArtAssisting1, isOpenArtAssisting2, isOpenArtAssisting3, isOpenArtAssisting4, isOpenArtAssisting5, 
+    isOpenArtAssisting6, isOpenArtAssisting7, isOpenArtAssisting8, isOpenArtAssisting9, isOpenArtAssisting10, 
+    isOpenArtAssisting11, isOpenArtAssisting12, isOpenArtAssisting13, isOpenArtAssisting14, isOpenArtAssisting15, 
+  isOpenArtAssisting16, isOpenArtAssisting17]
 
   return (
     <>
