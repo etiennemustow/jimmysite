@@ -1,0 +1,43 @@
+{
+  "name": "new",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "@steveeeie/react-page-transition": "^1.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "lerp": "1.0.3",
+    "modal-video": "^2.4.2",
+    "nodemailer": "^6.4.17",
+    "object-path": "^0.11.5",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-modal-video": "^1.2.6",
+    "react-reveal": "^1.2.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.2.0",
+    "react-three-fiber": "4.0.0-beta.12",
+    "react-transition-group": "^4.4.1",
+    "styled-components": "^5.2.1",
+    "three": "0.111.0"
+  },
+  "devDependencies": {
+    "typescript": "3.3.3"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

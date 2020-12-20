@@ -30,6 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "dev": "(cd src/server && npm start) & npm run start -p 3002",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

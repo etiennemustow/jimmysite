@@ -18,8 +18,6 @@ import { PageTransition } from '@steveeeie/react-page-transition';
 import Fade from 'react-reveal/Fade';
 
 
-
-
 function ArtAssisting() {
   const art_assisting = state.paragraphs.art_assisting
 
@@ -250,9 +248,11 @@ function Contact() {
           <div className=""><a className=""  href={`mailto:jimmyvantwest@gmail.com`}><h2>jimmyvantwest@gmail.com</h2></a></div>
           <div className=""><a className="" href="tel:+447588893374"><h2>+44 (0) 758 889 3374</h2></a></div>
           <a href="https://www.instagram.com/jimmyvantwest"><img className="contact-icon" src={state.icons.instagram}></img></a>
-
+          <br></br>
+          <ContactForm />     
           </div>
-          </div>
+ 
+          </div>     
           </div>
       </div>
     </>)
@@ -487,5 +487,50 @@ function App() {
 
   )
 }
+
+
+const ContactForm = () => {
+  const [status, setStatus] = useState("Submit");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+    const { name, email, message } = e.target.elements;
+    let details = {
+      name: name.value,
+      email: email.value,
+      message: message.value,
+    };
+    let response = await fetch("http://localhost:3000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(details),
+    });
+    setStatus("Submit");
+    let result = await response.json();
+    alert(result.status);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="name"></label>
+        <input type="text" id="name" placeholder="Your Name" required />
+      </div>
+      <div>
+        <label htmlFor="email"></label>
+        <input type="email" id="email" placeholder="Your Email" required />
+      </div>
+      <div>
+        <label htmlFor="message"></label>
+        <textarea id="message" placeholder="Your Message" required />
+      </div>
+      <button type="submit">{status}</button>
+    </form>
+  );
+};
+
+
 
 ReactDOM.render(<App />, document.getElementById("root"))
