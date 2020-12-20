@@ -246,10 +246,9 @@ function Contact() {
           In working a variety of roles, notably, Art Assistant, Production Designer and Render Artist, 
           I'm constantly learning and always strive to create exceptional sets.</h2>
           <br></br>
-          <h2>Get in touch:</h2>
-          <div className="coloured"><a className="coloured"  href={`mailto:jimmyvantwest@gmail.com`}><h2>jimmyvantwest@gmail.com</h2></a></div>
-          <div className="coloured"><a className="coloured" href="tel:+447588893374"><h2>+44 (0) 758 889 3374</h2></a></div>
-          <a href={`mailto:jimmyvantwest@gmail.com`}><img className="contact-icon" src={state.icons.email}></img></a>
+          <div className="underline"><h2>Get in touch:</h2></div>
+          <div className=""><a className=""  href={`mailto:jimmyvantwest@gmail.com`}><h2>jimmyvantwest@gmail.com</h2></a></div>
+          <div className=""><a className="" href="tel:+447588893374"><h2>+44 (0) 758 889 3374</h2></a></div>
           <a href="https://www.instagram.com/jimmyvantwest"><img className="contact-icon" src={state.icons.instagram}></img></a>
 
           </div>
