@@ -16,7 +16,7 @@ import {
 } from "react-router-dom";
 import { PageTransition } from '@steveeeie/react-page-transition';
 import Fade from 'react-reveal/Fade';
-
+require('dotenv').config()
 
 function ArtAssisting() {
   const art_assisting = state.paragraphs.art_assisting
