@@ -24,6 +24,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/contact', (req,res) => {
+  console.log("YESSSS")
+  console.log(process.env.EMAIL + " +++++ " + process.env.PASS)
   var data = req.body;
 
 var smtpTransport = nodemailer.createTransport({
