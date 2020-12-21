@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom"
-import React, { Component, useState} from "react"
+import React, { Component, useState } from "react"
 import { Canvas, Dom, useLoader, useFrame } from "react-three-fiber"
 import { TextureLoader, LinearFilter } from "three"
 import lerp from "lerp"
@@ -17,6 +17,9 @@ import {
 import { PageTransition } from '@steveeeie/react-page-transition';
 import Fade from 'react-reveal/Fade';
 import axios from 'axios';
+import emailjs from 'emailjs-com';
+// import{ init } from 'emailjs-com';
+// init("user_2t5SOqUvP0K225EiHwW6p");
 
 
 function ArtAssisting() {
@@ -123,18 +126,18 @@ function ArtAssisting() {
     console.log("CLICKED")
     setOpenArtAssisting16(boolean)
 
-  }  function artAssisting17Action(boolean) {
+  } function artAssisting17Action(boolean) {
     console.log("CLICKED")
     setOpenArtAssisting17(boolean)
   }
-  const artAssistingActions = [artAssisting0Action, artAssisting1Action, artAssisting2Action, artAssisting3Action, artAssisting4Action, artAssisting5Action, 
-    artAssisting6Action, artAssisting7Action, artAssisting8Action, artAssisting9Action, artAssisting10Action, 
-    artAssisting11Action, artAssisting12Action, artAssisting13Action, artAssisting14Action, artAssisting15Action, 
-  artAssisting16Action, artAssisting17Action]
-  const is_action = [isOpenArtAssisting0, isOpenArtAssisting1, isOpenArtAssisting2, isOpenArtAssisting3, isOpenArtAssisting4, isOpenArtAssisting5, 
-    isOpenArtAssisting6, isOpenArtAssisting7, isOpenArtAssisting8, isOpenArtAssisting9, isOpenArtAssisting10, 
-    isOpenArtAssisting11, isOpenArtAssisting12, isOpenArtAssisting13, isOpenArtAssisting14, isOpenArtAssisting15, 
-  isOpenArtAssisting16, isOpenArtAssisting17]
+  const artAssistingActions = [artAssisting0Action, artAssisting1Action, artAssisting2Action, artAssisting3Action, artAssisting4Action, artAssisting5Action,
+    artAssisting6Action, artAssisting7Action, artAssisting8Action, artAssisting9Action, artAssisting10Action,
+    artAssisting11Action, artAssisting12Action, artAssisting13Action, artAssisting14Action, artAssisting15Action,
+    artAssisting16Action, artAssisting17Action]
+  const is_action = [isOpenArtAssisting0, isOpenArtAssisting1, isOpenArtAssisting2, isOpenArtAssisting3, isOpenArtAssisting4, isOpenArtAssisting5,
+    isOpenArtAssisting6, isOpenArtAssisting7, isOpenArtAssisting8, isOpenArtAssisting9, isOpenArtAssisting10,
+    isOpenArtAssisting11, isOpenArtAssisting12, isOpenArtAssisting13, isOpenArtAssisting14, isOpenArtAssisting15,
+    isOpenArtAssisting16, isOpenArtAssisting17]
 
   return (
     <>
@@ -238,23 +241,23 @@ function Contact() {
       <NavBar contact="active_tab" />
 
       <div className="contact-page">
-          <div className="boxed">
+        <div className="boxed">
           <div className="contact-text">
-          <div className="centered-text">
-          <h2>I've worked within the art department for Commercial, Music Videos, Fashion and Film since March 2019. 
-          In working a variety of roles, notably, Art Assistant, Production Designer and Render Artist, 
+            <div className="centered-text">
+              <h2>I've worked within the art department for Commercial, Music Videos, Fashion and Film since March 2019.
+              In working a variety of roles, notably, Art Assistant, Production Designer and Render Artist,
           I'm constantly learning and always strive to create exceptional sets.</h2>
-          <br></br>
-          <div className="underline"><h2>Get in touch:</h2></div>
-          <div className=""><a className=""  href={`mailto:jimmyvantwest@gmail.com`}><h2>jimmyvantwest@gmail.com</h2></a></div>
-          <div className=""><a className="" href="tel:+447588893374"><h2>+44 (0) 758 889 3374</h2></a></div>
-          <a href="https://www.instagram.com/jimmyvantwest"><img className="contact-icon" src={state.icons.instagram}></img></a>
-          <br></br>
-          <ContactForm />     
+              <br></br>
+              <div className="underline"><h2>Get in touch:</h2></div>
+              <div className=""><a className="" href={`mailto:jimmyvantwest@gmail.com`}><h2>jimmyvantwest@gmail.com</h2></a></div>
+              <div className=""><a className="" href="tel:+447588893374"><h2>+44 (0) 758 889 3374</h2></a></div>
+              <a href="https://www.instagram.com/jimmyvantwest"><img className="contact-icon" src={state.icons.instagram}></img></a>
+              <br></br>
+              <ContactForm />
+            </div>
+
           </div>
- 
-          </div>     
-          </div>
+        </div>
       </div>
     </>)
 }
@@ -352,9 +355,9 @@ function RenderArt() {
 
 
       <div className="gallery">
-      <RenderArtCarousel index={render_art_icons[0]} action_function={openModal0}/>
-      <RenderArtCarousel index={render_art_icons[1]} action_function={openModal1}/>
-      <RenderArtCarousel index={render_art_icons[2]} action_function={openModal2}/>
+        <RenderArtCarousel index={render_art_icons[0]} action_function={openModal0} />
+        <RenderArtCarousel index={render_art_icons[1]} action_function={openModal1} />
+        <RenderArtCarousel index={render_art_icons[2]} action_function={openModal2} />
 
         {/* {render_art_icons.map((index) =>
           <figure className={index.css + index.action} key={index.action_icon} onClick={(e) => {
@@ -376,9 +379,9 @@ function RenderArt() {
 
       <div id="myModal0" className="modal">
         <span onClick={(e) => {
-            e.stopPropagation()
-            closeModal0()
-          }} className="close cursor" >&times;</span>
+          e.stopPropagation()
+          closeModal0()
+        }} className="close cursor" >&times;</span>
         <div className="modal-content">
           <Carousel pictures_location={render_art.apartment} />
         </div>
@@ -386,9 +389,9 @@ function RenderArt() {
 
       <div id="myModal1" className="modal">
         <span onClick={(e) => {
-            e.stopPropagation()
-            closeModal1()
-          }} className="close cursor">&times;</span>
+          e.stopPropagation()
+          closeModal1()
+        }} className="close cursor">&times;</span>
         <div className="modal-content">
           <Carousel pictures_location={render_art.gallery} />
         </div>
@@ -396,9 +399,9 @@ function RenderArt() {
 
       <div id="myModal2" className="modal">
         <span onClick={(e) => {
-            e.stopPropagation()
-            closeModal2()
-          }} className="close cursor" >&times;</span>
+          e.stopPropagation()
+          closeModal2()
+        }} className="close cursor" >&times;</span>
         <div className="modal-content">
           <Carousel pictures_location={render_art.smart_energy} />
         </div>
@@ -409,20 +412,20 @@ function RenderArt() {
 }
 
 
-function RenderArtCarousel({index, action_function}){
-  return(
-  <figure className={index.css + index.action} key={index.action_icon} onClick={(e) => {
-    e.stopPropagation()
-    {action_function()}
-  }}>
-    <div className="overlay">
+function RenderArtCarousel({ index, action_function }) {
+  return (
+    <figure className={index.css + index.action} key={index.action_icon} onClick={(e) => {
+      e.stopPropagation()
+      { action_function() }
+    }}>
+      <div className="overlay">
 
-      <img className="gallery__img" src={index.image}></img>
-      <div className="text-header">{index.header}</div>
-      <div className="text-footer">{index.text}</div>
-    </div>
+        <img className="gallery__img" src={index.image}></img>
+        <div className="text-header">{index.header}</div>
+        <div className="text-footer">{index.text}</div>
+      </div>
 
-  </figure>
+    </figure>
   )
 }
 
@@ -490,38 +493,33 @@ function App() {
 }
 
 
+
+
 class ContactForm extends Component {
 
-  
-
   state = {
-      name: '',
-      message: '',
-      email: '',
-      sent: false,
-      buttonText: 'Send Message'
-  }
+    name: '',
+    message: '',
+    email: '',
+    sent: false,
+    buttonText: 'Send Message'
+}
 
-  formSubmit = (e) => {
-    e.preventDefault()
-  
+
+  sendEmail = (e) => {
+    e.preventDefault();
+
     this.setState({
-        buttonText: '...sending'
-    })
-  
-    let data = {
-        name: this.state.name,
-        email: this.state.email,
-        message: this.state.message
-    }
-    
-    axios.post(`contact`, data)
-    .then( res => {
+      buttonText: '...sending'
+  })
+    emailjs.sendForm('service_3kp28wy', 'template_zshlxsk', e.target, 'user_2t5SOqUvP0K225EiHwW6p')
+      .then((result) => {
+        console.log(result.text);
         this.setState({ sent: true }, this.resetForm())
-    })
-    .catch( () => {
-      console.log('Message not sent')
-    })
+      }, (error) => {
+        console.log(error.text);
+      });
+
   }
 
   resetForm = () => {
@@ -533,27 +531,24 @@ class ContactForm extends Component {
     })
 }
 
-  render() {
-      return(
-         
-    <form onSubmit={ (e) => this.formSubmit(e)}>
-    <div>
-    <label  htmlFor="message-name"></label>
-    <input onChange={e => this.setState({ name: e.target.value})} name="name" type="text" placeholder="Your Name" value={this.state.name}/>
-    </div>
-    <div>
-    <label htmlFor="message-email"></label>
-    <input onChange={(e) => this.setState({ email: e.target.value})} name="email"  type="email" placeholder="Your email" required value={this.state.email} />
-    </div>
-    <div>
-    <label htmlFor="message-input"></label>
-    <textarea onChange={e => this.setState({ message: e.target.value})} name="message"  type="text" placeholder="Your message" value={this.state.message} required/>
-    </div>
-        <button type="submit" >{ this.state.buttonText }</button>
-  </form>
-      );
-  }
-}
+  render(){
 
+  return (
+    <form className="contact-form" onSubmit={(e) => this.sendEmail(e)}>
+      <div>
+        <input onChange={e => this.setState({ name: e.target.value})} type="text" name="user_name" placeholder="Your name" required value={this.state.name}/>
+      </div>
+      <div>
+        <input onChange={(e) => this.setState({ email: e.target.value})} type="email" name="user_email" placeholder="Your email" required value={this.state.email}/>
+      </div>
+      <div>
+        <textarea onChange={e => this.setState({ message: e.target.value})} name="message" placeholder="Your message" value={this.state.message} required/>
+      </div>
+      <button type="submit">{this.state.buttonText}</button>
+      {/* <input type="submit" value="Send" /> */}
+    </form>
+  );
+  } 
+}
 
 ReactDOM.render(<App />, document.getElementById("root"))
