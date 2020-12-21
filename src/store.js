@@ -132,7 +132,7 @@ smart_energy: [
   art_assisting: [
     {
       css: "gallery__item gallery__item--",
-      header: "Adidas x Superstan",
+      header: "Adidas x Superstan Commercial",
       image: "/adidassuperstan.jpg",
       text: "designed by Benny Casey",
       video: "419372557",
@@ -266,7 +266,7 @@ smart_energy: [
     },
     {
       css: "gallery__item gallery__item--",
-      header: "Current Account Switch Service Ad",
+      header: "Current Account Switch Service Commercial",
       image: "/currentaccount.png",
       text:
       "designed by Benny Casey",

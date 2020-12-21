@@ -462,7 +462,6 @@ function Home() {
           <span>Image 05</span>
         </li>
       </ul>
-
     </>
   )
 }

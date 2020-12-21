@@ -11,11 +11,14 @@
 .absolute-wrapper{
   position: relative;
 }
+
+.no-overflow{
+  overflow: hidden;
+}
 nav.navbar.navbar-expand-lg.navbar-light.bg-transparent {
   position: relative;
   z-index: 3;
 }
-
 .centered-text{
   text-align: center;
 }
@@ -118,7 +121,6 @@ h2 {
 }
 .boxed {
   margin-bottom: 10%;
-  border: 1px solid white;
   width: 87%;
   height: 85%;
   padding: 10px;
@@ -173,7 +175,6 @@ font-size: small;
   }
   .boxed {
     margin-bottom: 10%;
-    border: 1px solid white;
     width: 85%;
     height: 90%;
     padding: 10px;
@@ -200,7 +201,6 @@ font-size: small;
 
   .boxed {
     margin-bottom: 10%;
-    border: 1px solid white;
     width: 80%;
     height: 90%;
     padding: 16px;
@@ -249,7 +249,6 @@ font-size: small;
   }
   .boxed {
     margin-bottom: 10%;
-    border: 1px solid white;
     width: 80%;
     height: 90%;
     padding: 20px;
@@ -284,7 +283,6 @@ height: 30px;
 
   .boxed {
     margin-bottom: 10%;
-    border: 1px solid white;
     width: 80%;
     height: 90%;
     padding: 30px;
@@ -323,7 +321,6 @@ height: 30px;
   
   .boxed {
     margin-bottom: 10%;
-    border: 1px solid white;
     width: 80%;
     height: 95%;
     padding: 30px;
@@ -379,7 +376,6 @@ height: 30px;
 
   .boxed {
     margin-bottom: 10%;
-    border: 1px solid white;
     width: 80%;
     height: 90%;
     padding: 20px;
@@ -424,7 +420,6 @@ height: 30px;
   
     .boxed {
     margin-bottom: 10%;
-    border: 1px solid white;
     width: 80%;
     height: 88%;
     padding: 20px;
@@ -463,6 +458,13 @@ height: 30px;
     width: 320px;
     height: 100px;
   }
+   
+  .boxed {
+    margin-bottom: 10%;
+    width: 80%;
+    height: 90%;
+    z-index: 1;
+  }
 }
 
 
@@ -483,6 +485,7 @@ body,
 
 .cb-slideshow,
 .cb-slideshow:after { 
+  overflow: hidden;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -681,7 +684,8 @@ a:hover {
 
 
 #active_tab {
-  color: rgba(85, 84, 84, 0.5);
+  color: slategray;
+  ;
 }
 
 .frame {
