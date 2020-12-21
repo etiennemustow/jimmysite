@@ -515,7 +515,7 @@ class ContactForm extends Component {
         message: this.state.message
     }
     
-    axios.post('contact', data)
+    axios.post(`contact`, data)
     .then( res => {
         this.setState({ sent: true }, this.resetForm())
     })
