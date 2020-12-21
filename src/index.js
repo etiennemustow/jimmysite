@@ -9,6 +9,7 @@ import state from "./store"
 import "./styles.css"
 import ModalVideo from 'react-modal-video'
 import "../node_modules/modal-video/js/jquery-modal-video";
+import emailjs from 'emailjs-com';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,7 +18,7 @@ import {
 import { PageTransition } from '@steveeeie/react-page-transition';
 import Fade from 'react-reveal/Fade';
 import axios from 'axios';
-import emailjs from 'emailjs-com';
+
 require('dotenv').config()
 
 
