@@ -24,7 +24,7 @@ const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 
 
 
@@ -45,22 +45,22 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
-module.exports = () => {
-  // call dotenv and it will return an Object with a parsed key 
-  const env = dotenv.config().parsed;
+// module.exports = () => {
+//   // call dotenv and it will return an Object with a parsed key 
+//   const env = dotenv.config().parsed;
   
-  // reduce it to a nice object, the same as before
-  const envKeys = Object.keys(env).reduce((prev, next) => {
-    prev[`process.env.${next}`] = JSON.stringify(env[next]);
-    return prev;
-  }, {});
+//   // reduce it to a nice object, the same as before
+//   const envKeys = Object.keys(env).reduce((prev, next) => {
+//     prev[`process.env.${next}`] = JSON.stringify(env[next]);
+//     return prev;
+//   }, {});
 
-  return {
-    plugins: [
-      new webpack.DefinePlugin(envKeys)
-    ]
-  };
-};
+//   return {
+//     plugins: [
+//       new webpack.DefinePlugin(envKeys)
+//     ]
+//   };
+// };
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function(webpackEnv) {
