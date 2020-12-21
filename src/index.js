@@ -241,6 +241,8 @@ function Contact() {
         <div className="boxed">
           <div className="contact-text">
             <div className="centered-text">
+              <h2 className="contact-heading underline">About</h2>
+              <br></br>
               <h2>I've worked within the art department for Commercial, Music Videos, Fashion and Film since March 2019.
               In working a variety of roles, notably, Art Assistant, Production Designer and Render Artist,
           I'm constantly learning and always strive to create exceptional sets.</h2>
