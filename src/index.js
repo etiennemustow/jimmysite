@@ -188,7 +188,7 @@ function NavBar({ art_assisting, production_design, render_art, contact }) {
             <a className="nav-link" id={render_art} href="/render_art">Render Art</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" id={contact} href="/contact">Contact</a>
+            <a className="nav-link" id={contact} href="/about_contact">About/Contact</a>
           </li>
         </ul>
       </div>
@@ -480,7 +480,7 @@ function App() {
         <Route exact path="/production_design" component={ProductionDesign} />
         <Route exact path="/art_assisting" component={ArtAssisting} />
         <Route exact path="/render_art" component={RenderArt} />
-        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/about_contact" component={Contact} />
 
 
       </Switch>
