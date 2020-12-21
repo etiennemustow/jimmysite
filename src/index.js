@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom"
-import React, { Suspense, useEffect, useRef, useMemo, useState, setState, Fragment } from "react"
+import React, { Component, useState} from "react"
 import { Canvas, Dom, useLoader, useFrame } from "react-three-fiber"
 import { TextureLoader, LinearFilter } from "three"
 import lerp from "lerp"
@@ -16,7 +16,8 @@ import {
 } from "react-router-dom";
 import { PageTransition } from '@steveeeie/react-page-transition';
 import Fade from 'react-reveal/Fade';
-require('dotenv').config()
+import axios from 'axios';
+
 
 function ArtAssisting() {
   const art_assisting = state.paragraphs.art_assisting
@@ -489,48 +490,70 @@ function App() {
 }
 
 
-const ContactForm = () => {
-  const [status, setStatus] = useState("Submit");
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
-    const { name, email, message } = e.target.elements;
-    let details = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    };
-    let response = await fetch("http://localhost:3000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(details),
-    });
-    setStatus("Submit");
-    let result = await response.json();
-    alert(result.status);
-  };
+class ContactForm extends Component {
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name"></label>
-        <input type="text" id="name" placeholder="Your Name" required />
-      </div>
-      <div>
-        <label htmlFor="email"></label>
-        <input type="email" id="email" placeholder="Your Email" required />
-      </div>
-      <div>
-        <label htmlFor="message"></label>
-        <textarea id="message" placeholder="Your Message" required />
-      </div>
-      <button type="submit">{status}</button>
-    </form>
-  );
-};
+  
 
+  state = {
+      name: '',
+      message: '',
+      email: '',
+      sent: false,
+      buttonText: 'Send Message'
+  }
+
+  formSubmit = (e) => {
+    e.preventDefault()
+  
+    this.setState({
+        buttonText: '...sending'
+    })
+  
+    let data = {
+        name: this.state.name,
+        email: this.state.email,
+        message: this.state.message
+    }
+    
+    axios.post('contact', data)
+    .then( res => {
+        this.setState({ sent: true }, this.resetForm())
+    })
+    .catch( () => {
+      console.log('Message not sent')
+    })
+  }
+
+  resetForm = () => {
+    this.setState({
+        name: '',
+        message: '',
+        email: '',
+        buttonText: 'Message Sent'
+    })
+}
+
+  render() {
+      return(
+         
+    <form onSubmit={ (e) => this.formSubmit(e)}>
+    <div>
+    <label  htmlFor="message-name"></label>
+    <input onChange={e => this.setState({ name: e.target.value})} name="name" type="text" placeholder="Your Name" value={this.state.name}/>
+    </div>
+    <div>
+    <label htmlFor="message-email"></label>
+    <input onChange={(e) => this.setState({ email: e.target.value})} name="email"  type="email" placeholder="Your email" required value={this.state.email} />
+    </div>
+    <div>
+    <label htmlFor="message-input"></label>
+    <textarea onChange={e => this.setState({ message: e.target.value})} name="message"  type="text" placeholder="Your message" value={this.state.message} required/>
+    </div>
+        <button type="submit" >{ this.state.buttonText }</button>
+  </form>
+      );
+  }
+}
 
 
 ReactDOM.render(<App />, document.getElementById("root"))
