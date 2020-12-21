@@ -26,6 +26,8 @@ app.get('/', (req, res) => {
 app.post('/contact', (req,res) => {
   console.log("YESSSS")
   console.log(process.env.EMAIL + " +++++ " + process.env.PASS)
+  console.log("the proxy port is: " + port)
+  console.log("The system port is: " + process.env.PORT)
   var data = req.body;
 
 var smtpTransport = nodemailer.createTransport({
