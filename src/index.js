@@ -18,6 +18,9 @@ import { PageTransition } from '@steveeeie/react-page-transition';
 import Fade from 'react-reveal/Fade';
 import axios from 'axios';
 import emailjs from 'emailjs-com';
+require('dotenv').config()
+
+
 // import{ init } from 'emailjs-com';
 // init("user_2t5SOqUvP0K225EiHwW6p");
 
@@ -512,12 +515,13 @@ class ContactForm extends Component {
     this.setState({
       buttonText: '...sending'
   })
-    emailjs.sendForm('service_3kp28wy', 'template_zshlxsk', e.target, 'user_2t5SOqUvP0K225EiHwW6p')
+    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, e.target, process.env.REACT_APP_USER_ID)
       .then((result) => {
         console.log(result.text);
         this.setState({ sent: true }, this.resetForm())
       }, (error) => {
         console.log(error.text);
+        console.log("service id: " + process.env.REACT_APP_SERVICE_ID + "\n template id: " + process.env.REACT_APP_TEMPLATE_ID + "\n user_id: " + process.env.REACT_APP_USER_ID)
       });
 
   }
