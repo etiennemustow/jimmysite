@@ -39,7 +39,7 @@
     "typescript": "3.3.3"
   },
   "scripts": {
-    "start": "node server & react-scripts start --port 3000",
+    "start": "react-scripts start",
     "server": "node-env-run server --exec nodemon | pino-colada",
     "dev": "run-p server start",
     "build": "react-scripts build",
