@@ -7,7 +7,7 @@ require('dotenv').config()
 
 const app = express();
 
-const port = 4444;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
   res.send('Welcome to my api');
 })
 
-app.post('/contact', (req,res) => {
+app.post('contact', (req,res) => {
   console.log("YESSSS")
   console.log(process.env.EMAIL + " +++++ " + process.env.PASS)
   console.log("the proxy port is: " + port)
@@ -49,7 +49,7 @@ var mailOptions = {
 };
 
 smtpTransport.sendMail(mailOptions,
-(error, response) => {
+(error, res) => {
   if(error) {
     res.send(error)
   }else {
