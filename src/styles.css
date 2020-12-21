@@ -619,7 +619,7 @@ a {
 
 a:focus, 
 a:hover {
-  color: yellow;
+  color: #ffbf00;
 }
 
 #root {
