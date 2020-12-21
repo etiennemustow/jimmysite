@@ -4,6 +4,7 @@ import state from "./store"
 import "./styles.css"
 import ModalVideo from 'react-modal-video'
 import "../node_modules/modal-video/js/jquery-modal-video";
+import "../node_modules/emailjs-com"
 import emailjs from 'emailjs-com';
 import {
   BrowserRouter as Router,
