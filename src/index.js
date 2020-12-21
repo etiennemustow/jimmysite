@@ -1,10 +1,5 @@
 import ReactDOM from "react-dom"
 import React, { Component, useState } from "react"
-import { Canvas, Dom, useLoader, useFrame } from "react-three-fiber"
-import { TextureLoader, LinearFilter } from "three"
-import lerp from "lerp"
-import Diamonds from "./diamonds/Diamonds"
-import { Block, useBlock } from "./blocks"
 import state from "./store"
 import "./styles.css"
 import ModalVideo from 'react-modal-video'
@@ -15,9 +10,6 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import { PageTransition } from '@steveeeie/react-page-transition';
-import Fade from 'react-reveal/Fade';
-import axios from 'axios';
 
 require('dotenv').config()
 

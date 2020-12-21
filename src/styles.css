@@ -522,7 +522,7 @@ figure {
   background-position: 50% 50%;
   opacity: 0;
   z-index: 0;
-  animation: imageAnimation 20s linear infinite 0s; 
+  animation: imageAnimation 25s linear infinite 0s; 
 }
 
 
@@ -534,12 +534,16 @@ figure {
   animation-delay: 5s; 
 }
 .cb-slideshow li:nth-child(3) span { 
-  background-image: url(background/render.jpg);
+  background-image: url(background/flowers.png);
   animation-delay: 10s; 
 }
 .cb-slideshow li:nth-child(4) span { 
   background-image: url(background/snakebite2.jpg);
   animation-delay: 15s; 
+}
+.cb-slideshow li:nth-child(5) span { 
+  background-image: url(background/makeit.jpg);
+  animation-delay: 20s; 
 }
 
 .cb-slideshow li div h3 { 
