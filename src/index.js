@@ -195,40 +195,6 @@ function NavBar({ art_assisting, production_design, render_art, contact }) {
     </nav>
   )
 }
-function Carousel({ pictures_location }) {
-  const pictures = pictures_location
-  return (
-    <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
-      <div className="carousel-inner">
-        {pictures.map((picture) => {
-          if (picture.action == 0) {
-            return (<div className="carousel-item active" key={picture.key + picture.action}>
-              <div className="crop">
-                <img className="d-block w-100" src={picture.image} alt="First slide"  ></img>
-              </div>
-            </div>)
-          } else {
-            return (<div className="carousel-item" key={picture.key + picture.action}>
-              <div className="crop">
-                <img className="d-block w-100" src={picture.image} alt="Second slide" ></img>
-              </div>
-            </div>)
-          }
-        }
-        )}
-
-      </div>
-      <a className="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="sr-only">Previous</span>
-      </a>
-      <a className="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="sr-only">Next</span>
-      </a>
-    </div>
-  )
-}
 
 function Contact() {
 
@@ -344,6 +310,11 @@ function RenderArt() {
   function closeModal2() {
     document.getElementById("myModal2").style.display = "none";
   }
+
+  function currentSlide(){
+    document.getElementById('apartment1').style.display = "block";
+  }
+
   const render_art_icons = [render_art.apartment[0], render_art.gallery[0], render_art.smart_energy[0]]
 
 
@@ -358,21 +329,6 @@ function RenderArt() {
         <RenderArtCarousel index={render_art_icons[1]} action_function={openModal1} />
         <RenderArtCarousel index={render_art_icons[2]} action_function={openModal2} />
 
-        {/* {render_art_icons.map((index) =>
-          <figure className={index.css + index.action} key={index.action_icon} onClick={(e) => {
-            e.stopPropagation()
-            renderArtActions[index.action_icon]()
-          }}>
-            <div className="overlay">
-
-              <img className="gallery__img" src={index.image}></img>
-              <div className="text-header">{index.header}</div>
-              <div className="text-footer">{index.text}</div>
-            </div>
-
-          </figure>
-        )} */}
-
 
       </div>
 
@@ -381,8 +337,8 @@ function RenderArt() {
           e.stopPropagation()
           closeModal0()
         }} className="close cursor" >&times;</span>
-        <div className="modal-content">
-          <Carousel pictures_location={render_art.apartment} />
+       <div className="modal-content-render-art">     
+          <Carousel pictures_location={render_art.apartment} carousel_id="carousel_apartment" />
         </div>
       </div>
 
@@ -391,8 +347,8 @@ function RenderArt() {
           e.stopPropagation()
           closeModal1()
         }} className="close cursor">&times;</span>
-        <div className="modal-content">
-          <Carousel pictures_location={render_art.gallery} />
+        <div className="modal-content-render-art">
+          <Carousel pictures_location={render_art.gallery} carousel_id="carousel_gallery"/>
         </div>
       </div>
 
@@ -401,14 +357,50 @@ function RenderArt() {
           e.stopPropagation()
           closeModal2()
         }} className="close cursor" >&times;</span>
-        <div className="modal-content">
-          <Carousel pictures_location={render_art.smart_energy} />
+        <div className="modal-content-render-art">
+          <Carousel pictures_location={render_art.smart_energy} carousel_id="carousel_smart_energy" />
         </div>
       </div>
 
     </>
   )
 }
+
+function Carousel({ pictures_location, carousel_id }) {
+  const pictures = pictures_location
+  return (
+    <div id={carousel_id} className="carousel slide carousel-fade" data-ride="carousel">
+      <div className="carousel-inner">
+        {pictures.map((picture) => {
+          if (picture.action == 0) {
+            return (<div className="carousel-item active" key={picture.key + picture.action}>
+              <div className="crop">
+                <img className="d-block w-100" src={picture.image} alt="First slide"  ></img>
+              </div>
+            </div>)
+          } else {
+            return (<div className="carousel-item" key={picture.key + picture.action}>
+              <div className="crop">
+                <img className="d-block w-100" src={picture.image} alt="Second slide" ></img>
+              </div>
+            </div>)
+          }
+        }
+        )}
+
+      </div>
+      <a className="carousel-control-prev" href={'#' + carousel_id} role="button" data-slide="prev">
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="sr-only">Previous</span>
+      </a>
+      <a className="carousel-control-next" href={'#' + carousel_id} role="button" data-slide="next">
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="sr-only">Next</span>
+      </a>
+    </div>
+  )
+}
+
 
 
 function RenderArtCarousel({ index, action_function }) {
@@ -501,7 +493,7 @@ class ContactForm extends Component {
     email: '',
     sent: false,
     buttonText: 'Send Message'
-}
+  }
 
 
   sendEmail = (e) => {
@@ -509,7 +501,7 @@ class ContactForm extends Component {
 
     this.setState({
       buttonText: '...sending'
-  })
+    })
     emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, e.target, process.env.REACT_APP_USER_ID)
       .then((result) => {
         console.log(result.text);
@@ -523,31 +515,31 @@ class ContactForm extends Component {
 
   resetForm = () => {
     this.setState({
-        name: '',
-        message: '',
-        email: '',
-        buttonText: 'Message Sent'
+      name: '',
+      message: '',
+      email: '',
+      buttonText: 'Message Sent'
     })
-}
+  }
 
-  render(){
+  render() {
 
-  return (
-    <form className="contact-form" onSubmit={(e) => this.sendEmail(e)}>
-      <div>
-        <input onChange={e => this.setState({ name: e.target.value})} type="text" name="user_name" placeholder="Your name" required value={this.state.name}/>
-      </div>
-      <div>
-        <input onChange={(e) => this.setState({ email: e.target.value})} type="email" name="user_email" placeholder="Your email" required value={this.state.email}/>
-      </div>
-      <div>
-        <textarea onChange={e => this.setState({ message: e.target.value})} name="message" placeholder="Your message" value={this.state.message} required/>
-      </div>
-      <button type="submit">{this.state.buttonText}</button>
-      {/* <input type="submit" value="Send" /> */}
-    </form>
-  );
-  } 
+    return (
+      <form className="contact-form" onSubmit={(e) => this.sendEmail(e)}>
+        <div>
+          <input onChange={e => this.setState({ name: e.target.value })} type="text" name="user_name" placeholder="Your name" required value={this.state.name} />
+        </div>
+        <div>
+          <input onChange={(e) => this.setState({ email: e.target.value })} type="email" name="user_email" placeholder="Your email" required value={this.state.email} />
+        </div>
+        <div>
+          <textarea onChange={e => this.setState({ message: e.target.value })} name="message" placeholder="Your message" value={this.state.message} required />
+        </div>
+        <button type="submit">{this.state.buttonText}</button>
+        {/* <input type="submit" value="Send" /> */}
+      </form>
+    );
+  }
 }
 
 ReactDOM.render(<App />, document.getElementById("root"))
