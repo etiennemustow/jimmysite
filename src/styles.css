@@ -562,22 +562,22 @@ figure {
 
 
 .cb-slideshow li:nth-child(1) span { 
-  background-image: url(background/blonde.png) 
+  background-image: url(background/blonde.webp) 
 }
 .cb-slideshow li:nth-child(2) span { 
-  background-image: url(background/lmd.png);
+  background-image: url(background/lmd.webp);
   animation-delay: 5s; 
 }
 .cb-slideshow li:nth-child(3) span { 
-  background-image: url(background/flowers.png);
+  background-image: url(background/flowers.webp);
   animation-delay: 10s; 
 }
 .cb-slideshow li:nth-child(4) span { 
-  background-image: url(background/snakebite2.jpg);
+  background-image: url(background/snakebite2.webp);
   animation-delay: 15s; 
 }
 .cb-slideshow li:nth-child(5) span { 
-  background-image: url(background/makeit.jpg);
+  background-image: url(background/makeit.webp);
   animation-delay: 20s; 
 }
 
