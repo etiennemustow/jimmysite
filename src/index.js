@@ -233,6 +233,7 @@ function ProductionDesign() {
   const [isOpen, setOpen] = useState(false)
   const [isOpenProdDesign0, setOpenProdDesign0] = useState(false)
   const [isOpenProdDesign1, setOpenProdDesign1] = useState(false)
+  const [isOpenProdDesign2, setOpenProdDesign2] = useState(false)
 
 
   function prodDesign0Action(boolean) {
@@ -243,9 +244,13 @@ function ProductionDesign() {
     console.log("CLICKED")
     setOpenProdDesign1(boolean)
   }
+  function prodDesign2Action(boolean) {
+    console.log("CLICKED")
+    setOpenProdDesign2(boolean)
+  }
 
-  const prodDesignActions = [prodDesign0Action, prodDesign1Action]
-  const is_action = [isOpenProdDesign0, isOpenProdDesign1]
+  const prodDesignActions = [prodDesign0Action, prodDesign1Action, prodDesign2Action]
+  const is_action = [isOpenProdDesign0, isOpenProdDesign1, isOpenProdDesign2]
 
   return (
     <>
@@ -265,7 +270,9 @@ function ProductionDesign() {
 
                 <img className="gallery__img" src={index.image}></img>
                 <div className="text-header">{index.header}</div>
-                <div className="text-footer">{index.text}</div>
+                <div className="text-footer">{index.text1}</div>
+                <div className="text-footer2">{index.text2}</div>
+
               </div>
 
             </figure>
@@ -454,6 +461,12 @@ function Home() {
         </li>
         <li>
           <span>Image 05</span>
+        </li>
+        <li>
+          <span>Image 06</span>
+        </li>
+        <li>
+          <span>Image 07</span>
         </li>
       </ul>
     </>

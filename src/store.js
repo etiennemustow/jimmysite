@@ -15,7 +15,8 @@ const state = {
       {
       header: "TTRRUUCES - TTRRUUCES",
       image: "/truuuces.png",
-      text: "directed by Maxim Kelly",
+      text1: "directed by Maxim Kelly",
+      text2: "production design by Jimmy Van Twest",
       video: "380030498",
       channel: "vimeo",
       action: 0,
@@ -24,11 +25,23 @@ const state = {
     {
       header: "Finn Foxell- Make It Count",
       image: "/makeitcount.jpg",
-      text:
+      text1:
       "directed by Milo Blake",
+      text2: "production design by Jimmy Van Twest",
       video: "450474177",
       channel: "vimeo",
       action: 1,
+      css: "gallery__item gallery__item--"
+    },
+    {
+      header: "Rachel Chinouriri - Darker Place",
+      image: "/darker_place.webp",
+      text1:
+      "directed by Milo Blake",
+      text2: "production design by Jimmy Van Twest",
+      video: "65xdvUfH4tM",
+      channel: "youtube",
+      action: 2,
       css: "gallery__item gallery__item--"
     }
   ],

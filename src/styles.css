@@ -99,6 +99,16 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.text-footer2 {
+  opacity: 0;
+  width: 100%;
+  color: white;
+  font-size: 0.5em;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
@@ -160,6 +170,9 @@ font-size: small;
   .text-footer {
     font-size: 0.6em;
   }
+  .text-footer2 {
+    font-size: 0.6em;
+  }
   .navbar-light .navbar-brand:hover {
     font-size: 0.7em;
     color: slategray;
@@ -203,7 +216,9 @@ font-size: small;
   .text-footer {
     font-size: 0.6em;
   }
-
+  .text-footer2 {
+    font-size: 0.6em;
+  }
 
   h2 {
     font-size: 0.7em;
@@ -258,6 +273,9 @@ font-size: small;
   .text-footer {
     font-size: 0.6em;
   }
+  .text-footer2 {
+    font-size: 0.6em;
+  }
   h2 {
     font-size: 0.6em;
   }
@@ -295,6 +313,9 @@ height: 30px;
     font-size: 0.8em;
   }
   .text-footer {
+    font-size: 0.8em;
+  }
+  .text-footer2 {
     font-size: 0.8em;
   }
 
@@ -377,6 +398,9 @@ height: 30px;
     font-size: 12px;
   }
   .text-footer {
+    font-size: 12px;
+  }
+  .text-footer2 {
     font-size: 12px;
   }
   .navbar-light .navbar-nav .nav-link {
@@ -482,10 +506,13 @@ height: 30px;
     font-size: 2em;
   }
   .text-header{
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .text-footer {
-    font-size: 1.5em;
+    font-size: 1.2em;
+  }
+  .text-footer2 {
+    font-size: 1.2em;
   }
   .contact-icon {
     height: 50px;
@@ -563,28 +590,35 @@ figure {
   background-position: 50% 50%;
   opacity: 0;
   z-index: 0;
-  animation: imageAnimation 25s linear infinite 0s; 
+  animation: imageAnimation 35s linear infinite 0s; 
 }
-
 
 .cb-slideshow li:nth-child(1) span { 
-  background-image: url(background/blonde.webp) 
+  background-image: url(background/darker_place.webp);
 }
 .cb-slideshow li:nth-child(2) span { 
-  background-image: url(background/lmd.webp);
-  animation-delay: 5s; 
+  background-image: url(background/blonde.webp);
+  animation-delay: 5s;  
 }
 .cb-slideshow li:nth-child(3) span { 
-  background-image: url(background/flowers.webp);
+  background-image: url(background/lmd.webp);
   animation-delay: 10s; 
 }
 .cb-slideshow li:nth-child(4) span { 
-  background-image: url(background/snakebite2.webp);
+  background-image: url(background/flowers.webp);
   animation-delay: 15s; 
 }
 .cb-slideshow li:nth-child(5) span { 
-  background-image: url(background/makeit.webp);
+  background-image: url(background/greenbackground.webp);
   animation-delay: 20s; 
+}
+.cb-slideshow li:nth-child(6) span { 
+  background-image: url(background/snakebite2.webp);
+  animation-delay: 25s; 
+}
+.cb-slideshow li:nth-child(7) span { 
+  background-image: url(background/makeit.webp);
+  animation-delay: 30s; 
 }
 
 .cb-slideshow li div h3 { 
@@ -715,6 +749,10 @@ a:hover {
 .overlay:hover .text-footer {
   opacity: 1;
 }
+.overlay:hover .text-footer2 {
+  opacity: 1;
+}
+
 
 
 
