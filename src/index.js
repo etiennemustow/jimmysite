@@ -40,7 +40,7 @@ function ArtAssisting() {
   const [isOpenArtAssisting15, setOpenArtAssisting15] = useState(false)
   const [isOpenArtAssisting16, setOpenArtAssisting16] = useState(false)
   const [isOpenArtAssisting17, setOpenArtAssisting17] = useState(false)
-
+  const [isOpenArtAssisting18, setOpenArtAssisting18] = useState(false)
 
   function artAssisting0Action(boolean) {
     console.log("CLICKED")
@@ -123,26 +123,43 @@ function ArtAssisting() {
     console.log("CLICKED")
     setOpenArtAssisting16(boolean)
 
-  } function artAssisting17Action(boolean) {
+  } 
+  function artAssisting17Action(boolean) {
     console.log("CLICKED")
     setOpenArtAssisting17(boolean)
+  }
+  function artAssisting18Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting18(boolean)
   }
   const artAssistingActions = [artAssisting0Action, artAssisting1Action, artAssisting2Action, artAssisting3Action, artAssisting4Action, artAssisting5Action,
     artAssisting6Action, artAssisting7Action, artAssisting8Action, artAssisting9Action, artAssisting10Action,
     artAssisting11Action, artAssisting12Action, artAssisting13Action, artAssisting14Action, artAssisting15Action,
-    artAssisting16Action, artAssisting17Action]
+    artAssisting16Action, artAssisting17Action, artAssisting18Action]
   const is_action = [isOpenArtAssisting0, isOpenArtAssisting1, isOpenArtAssisting2, isOpenArtAssisting3, isOpenArtAssisting4, isOpenArtAssisting5,
     isOpenArtAssisting6, isOpenArtAssisting7, isOpenArtAssisting8, isOpenArtAssisting9, isOpenArtAssisting10,
     isOpenArtAssisting11, isOpenArtAssisting12, isOpenArtAssisting13, isOpenArtAssisting14, isOpenArtAssisting15,
-    isOpenArtAssisting16, isOpenArtAssisting17]
-
+    isOpenArtAssisting16, isOpenArtAssisting17, isOpenArtAssisting18]
+  
+    function openModal0(){
+     document.getElementById("myModal0").style.display = "block";
+    }
+  
+    function closeModal0() {
+      document.getElementById("myModal0").style.display = "none";
+    }
+  
   return (
     <>
       <NavBar art_assisting="active_tab" />
 
       <div className="gallery">
 
-        {art_assisting.map((index) =>
+        {art_assisting.filter(function(obj){
+          if(obj.action < 5){
+            return obj
+          }
+        }).map((index) =>
           <React.Fragment key={index.action}>
             <ModalVideo channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => artAssistingActions[index.action](false)} />
             <figure className={index.css + index.action} onClick={(e) => {
@@ -159,7 +176,48 @@ function ArtAssisting() {
             </figure>
           </React.Fragment>
         )}
+          {art_assisting.filter(function(obj){
+          if(obj.action == 5){
+            return obj
+          
+          }
+        }).map((index) =>
+        <>
+        <RenderArtCarousel index={index} action_function={openModal0} />
 
+        <div id="myModal0" className="modal">
+        <span onClick={(e) => {
+          e.stopPropagation()
+          closeModal0()
+        }} className="close cursor" >&times;</span>
+       <div className="modal-content-render-art">     
+          <Carousel pictures_location={index.gallery} carousel_id="carousel_apartment" />
+        </div>
+      </div>
+      </>
+  
+        )}
+        {art_assisting.filter(function(obj){
+          if(obj.action > 5){
+            return obj
+          }
+        }).map((index) =>
+          <React.Fragment key={index.action}>
+            <ModalVideo channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => artAssistingActions[index.action](false)} />
+            <figure className={index.css + index.action} onClick={(e) => {
+              e.stopPropagation()
+              artAssistingActions[index.action](true)
+            }}>
+              <div className="overlay">
+
+                <img className="gallery__img" src={index.image}></img>
+                <div className="text-header">{index.header}</div>
+                <div className="text-footer">{index.text}</div>
+              </div>
+
+            </figure>
+          </React.Fragment>
+        )}
 
 
 

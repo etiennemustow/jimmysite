@@ -192,12 +192,56 @@ smart_energy: [
     },
     {
       css: "gallery__item gallery__item--",
+      header: "British Vogue x Dua Lipa - Feb 2021 Cover",
+      image: "/voguedualipa.jpg",
+      text: "designed by Emma Roach",
+      video: "464147830",
+      channel: "vimeo",
+      action: 5,
+      gallery: [
+          {
+          header: "British Vogue x Dua Lipa - Feb 2021 Cover",
+          key: "vogue",
+          image: "/vogue/vogue7.jpg",
+          text: "designed by Emma Roach.",
+          action: 0,
+          action_icon: 0,
+          css: "gallery__item gallery__item--"
+        },
+        {
+          header: "British Vogue x Dua Lipa - Feb 2021 Cover",
+          key: "vogue",
+          image: "/vogue/vogue8.jpg",
+          text: "designed by Emma Roach.",
+          action: 1,
+          css: "gallery__item gallery__item--"
+        },
+        {
+          header: "British Vogue x Dua Lipa - Feb 2021 Cover",
+          key: "vogue",
+          image: "/vogue/vogue14.webp",
+          text: "designed by me.",
+          action: 2,
+          css: "gallery__item gallery__item--"
+        },
+        {
+          header: "British Vogue x Dua Lipa - Feb 2021 Cover",
+          key: "vogue",
+          image: "/vogue/vogue1.webp",
+          text: "designed by Emma Roach",
+          action: 3,
+          css: "gallery__item gallery__item--"
+        },
+      ]
+    },
+    {
+      css: "gallery__item gallery__item--",
       header: "Stand Atlantic - Jurassic Park",
       image: "/standatlanticjurassicpark.jpg",
       text: "designed by Benny Casey",
       video: "440368058",
       channel: "vimeo",
-      action: 5
+      action: 6
     },
     {
       css: "gallery__item gallery__item--",
@@ -207,7 +251,7 @@ smart_energy: [
       "designed by Benny Casey",
       video: "446441649",
       channel: "vimeo",
-      action: 6
+      action: 7
     },
     {
       css: "gallery__item gallery__item--",
@@ -217,7 +261,7 @@ smart_energy: [
       "designed by Bon Walsh",
       video: "8CfrpexaCwg",
       channel: "youtube",
-      action: 7
+      action: 8
     },
     {
       css: "gallery__item gallery__item--",
@@ -226,7 +270,7 @@ smart_energy: [
       text: "designed by Emma Roach",
       video: "qLPPGeTIuds",
       channel: "youtube",
-      action: 8
+      action: 9
     },
     {
       css: "gallery__item gallery__item--",
@@ -235,7 +279,7 @@ smart_energy: [
       text: "designed by Jakob Gierse",
       video: "kgUV1MaD_M8",
       channel: "youtube",
-      action: 9
+      action: 10
     },
     {
       css: "gallery__item gallery__item--",
@@ -245,7 +289,7 @@ smart_energy: [
       "designed by Jakob Gierse",
       video: "XPZgehksWo4",
       channel: "youtube",
-      action: 10
+      action: 11
     },
     {
       css: "gallery__item gallery__item--",
@@ -255,7 +299,7 @@ smart_energy: [
       "designed by Elena Muntoni",
       video: "IogVoBaYmvA",
       channel: "youtube",
-      action: 11
+      action: 12
     },
     {
       css: "gallery__item gallery__item--",
@@ -265,7 +309,7 @@ smart_energy: [
       "designed by Elena Muntoni",
       video: "t0LemwCvZq8",
       channel: "youtube",
-      action: 12
+      action: 13
     },
     {
       css: "gallery__item gallery__item--",
@@ -275,7 +319,7 @@ smart_energy: [
       "designed by Liz El-Kadhi",
       video: "-7LtIlQRwBg",
       channel: "youtube",
-      action: 13
+      action: 14
     },
     {
       css: "gallery__item gallery__item--",
@@ -285,7 +329,7 @@ smart_energy: [
       "designed by Benny Casey",
       video: "vWSC1Z8iCyc",
       channel: "youtube",
-      action: 14
+      action: 15
     },
     {
       css: "gallery__item gallery__item--",
@@ -295,7 +339,7 @@ smart_energy: [
       "designed by Ibby Njoya",
       video: "-7lGjE9zzOA",
       channel: "youtube",
-      action: 15
+      action: 16
     },
     {
       css: "gallery__item gallery__item--",
@@ -305,7 +349,7 @@ smart_energy: [
       "designed by Tim Gibson",
       video: "f7xuOo2DSjc",
       channel: "youtube",
-      action: 16
+      action: 17
     },    
     {
       css: "gallery__item gallery__item--",
@@ -315,7 +359,7 @@ smart_energy: [
       "designed by Thomas Bird",
       video: "iKMkXp3Xs3s",
       channel: "youtube",
-      action: 17
+      action: 18
     }
   ]
 },
