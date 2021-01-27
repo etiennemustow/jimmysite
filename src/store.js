@@ -193,7 +193,7 @@ smart_energy: [
     {
       css: "gallery__item gallery__item--",
       header: "British Vogue x Dua Lipa - Feb 2021 Cover",
-      image: "/voguedualipa.jpg",
+      image: "/voguedualipa2.jpg",
       text: "designed by Emma Roach",
       video: "464147830",
       channel: "vimeo",
