@@ -183,7 +183,7 @@ function ArtAssisting() {
           }
         }).map((index) =>
         <>
-        <RenderArtCarousel index={index} action_function={openModal0} />
+        <RenderArtCarousel index={index} action_function={openModal0} image_class="gallery__img vogue" />
 
         <div id="myModal0" className="modal">
         <span onClick={(e) => {
@@ -390,9 +390,9 @@ function RenderArt() {
 
 
       <div className="gallery">
-        <RenderArtCarousel index={render_art_icons[0]} action_function={openModal0} />
-        <RenderArtCarousel index={render_art_icons[1]} action_function={openModal1} />
-        <RenderArtCarousel index={render_art_icons[2]} action_function={openModal2} />
+        <RenderArtCarousel index={render_art_icons[0]} action_function={openModal0} image_class="gallery__img"/>
+        <RenderArtCarousel index={render_art_icons[1]} action_function={openModal1} image_class="gallery__img"/>
+        <RenderArtCarousel index={render_art_icons[2]} action_function={openModal2} image_class="gallery__img"/>
 
 
       </div>
@@ -468,7 +468,7 @@ function Carousel({ pictures_location, carousel_id }) {
 
 
 
-function RenderArtCarousel({ index, action_function }) {
+function RenderArtCarousel({ index, action_function, image_class }) {
   return (
     <figure className={index.css + index.action} key={index.action_icon} onClick={(e) => {
       e.stopPropagation()
@@ -476,7 +476,7 @@ function RenderArtCarousel({ index, action_function }) {
     }}>
       <div className="overlay">
 
-        <img className="gallery__img" src={index.image}></img>
+        <img className={image_class} src={index.image}></img>
         <div className="text-header">{index.header}</div>
         <div className="text-footer">{index.text}</div>
       </div>
