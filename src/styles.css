@@ -160,11 +160,13 @@ font-size: small;
 }
 
 .crop{
-  width: 75vw; 
-  height: 70%; 
-  overflow: hidden;
+  height: 35em;
+  width: auto;
+  max-height: 30em; 
+  max-width: 20em; 
   margin-left: auto;
   margin-right: auto;
+  overflow: none;
 }
 
 figure.gallery__item.gallery__item--5 {
@@ -220,11 +222,13 @@ figure.gallery__item.gallery__item--5 {
     font-size: 2em;
   }
   .crop{
-    width: 75vw; 
-    height: 70%; 
-    overflow: hidden;
+    height: 35em;
+    width: auto;
+    max-height: 30em; 
+    max-width: 20em; 
     margin-left: auto;
     margin-right: auto;
+    overflow: none;
   }
 
 }
@@ -271,11 +275,13 @@ figure.gallery__item.gallery__item--5 {
     font-size: 2em;
   }
   .crop{
-    width: 75vw; 
-    height: 70%; 
-    overflow: hidden;
+    height: 35em;
+    width: auto;
+    max-height: 35em; 
+    max-width: 20em; 
     margin-left: auto;
     margin-right: auto;
+    overflow: none;
   }
 }
 
@@ -376,11 +382,13 @@ height: 30px;
   font-size: 2em;
 }
 .crop{
-  width: 45vw; 
-  height: 70%; 
-  overflow: hidden;
+  height: 35em;
+  width: auto;
+  max-height: 35em; 
+  max-width: 30em; 
   margin-left: auto;
   margin-right: auto;
+  overflow: none;
 }
 
 }
@@ -486,11 +494,13 @@ height: 30px;
     font-size: 2em;
   }
   .crop{
-    width: 35vw; 
-    height: 70%; 
-    overflow: hidden;
+    height: 44em;
+    width: auto;
+    max-height: 44em; 
+    max-width: 39em; 
     margin-left: auto;
     margin-right: auto;
+    overflow: none;
   }
 }
 
@@ -539,13 +549,13 @@ height: 30px;
     width: 320px;
     height: 100px;
   }
-  .crop{
+  /* .crop{
     width: 35vw; 
     height: 70%; 
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-  }
+  } */
   
   
 }
@@ -583,12 +593,15 @@ height: 30px;
     z-index: 1;
   }
 
+
   .crop{
-    width: 28vw; 
-    height: 70%; 
-    overflow: hidden;
+    height: 42em;
+    width: auto;
+    max-height: 42em; 
+    max-width: 39em; 
     margin-left: auto;
     margin-right: auto;
+    overflow: none;
   }
 }
 
@@ -716,7 +729,6 @@ figure {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 body {

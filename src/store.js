@@ -219,7 +219,7 @@ smart_energy: [
         {
           header: "British Vogue x Dua Lipa - Feb 2021 Cover",
           key: "vogue",
-          image: "/vogue/vogue14.webp",
+          image: "/vogue/bvogue14.png",
           text: "designed by me.",
           action: 2,
           css: "gallery__item gallery__item--"
@@ -227,7 +227,7 @@ smart_energy: [
         {
           header: "British Vogue x Dua Lipa - Feb 2021 Cover",
           key: "vogue",
-          image: "/vogue/vogue1.webp",
+          image: "/vogue/vogue1.jpg",
           text: "designed by Emma Roach",
           action: 3,
           css: "gallery__item gallery__item--"
