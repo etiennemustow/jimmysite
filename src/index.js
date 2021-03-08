@@ -41,6 +41,15 @@ function ArtAssisting() {
   const [isOpenArtAssisting16, setOpenArtAssisting16] = useState(false)
   const [isOpenArtAssisting17, setOpenArtAssisting17] = useState(false)
   const [isOpenArtAssisting18, setOpenArtAssisting18] = useState(false)
+  const [isOpenArtAssisting19, setOpenArtAssisting19] = useState(false)
+  const [isOpenArtAssisting20, setOpenArtAssisting20] = useState(false)
+  const [isOpenArtAssisting21, setOpenArtAssisting21] = useState(false)
+  const [isOpenArtAssisting22, setOpenArtAssisting22] = useState(false)
+  const [isOpenArtAssisting23, setOpenArtAssisting23] = useState(false)
+  const [isOpenArtAssisting24, setOpenArtAssisting24] = useState(false)
+  const [isOpenArtAssisting25, setOpenArtAssisting25] = useState(false)
+  const [isOpenArtAssisting26, setOpenArtAssisting26] = useState(false)
+  const [isOpenArtAssisting27, setOpenArtAssisting27] = useState(false)
 
   function artAssisting0Action(boolean) {
     console.log("CLICKED")
@@ -132,14 +141,54 @@ function ArtAssisting() {
     console.log("CLICKED")
     setOpenArtAssisting18(boolean)
   }
+  function artAssisting19Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting19(boolean)
+  }
+  function artAssisting20Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting20(boolean)
+  }
+  function artAssisting21Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting21(boolean)
+  }
+  function artAssisting22Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting22(boolean)
+  }  
+  function artAssisting23Action(boolean) {
+    console.log("CLICKED")
+    setOpenArtAssisting23(boolean)
+  }
+function artAssisting24Action(boolean) {
+  console.log("CLICKED")
+  setOpenArtAssisting24(boolean)
+}
+function artAssisting25Action(boolean) {
+  console.log("CLICKED")
+  setOpenArtAssisting25(boolean)
+}
+function artAssisting26Action(boolean) {
+  console.log("CLICKED")
+  setOpenArtAssisting26(boolean)
+}
+function artAssisting27Action(boolean) {
+  console.log("CLICKED")
+  setOpenArtAssisting27(boolean)
+}
+
+
   const artAssistingActions = [artAssisting0Action, artAssisting1Action, artAssisting2Action, artAssisting3Action, artAssisting4Action, artAssisting5Action,
     artAssisting6Action, artAssisting7Action, artAssisting8Action, artAssisting9Action, artAssisting10Action,
     artAssisting11Action, artAssisting12Action, artAssisting13Action, artAssisting14Action, artAssisting15Action,
-    artAssisting16Action, artAssisting17Action, artAssisting18Action]
+    artAssisting16Action, artAssisting17Action, artAssisting18Action, artAssisting19Action, artAssisting20Action, artAssisting21Action, artAssisting22Action, 
+    artAssisting23Action, artAssisting24Action, artAssisting25Action, artAssisting26Action, artAssisting27Action]
   const is_action = [isOpenArtAssisting0, isOpenArtAssisting1, isOpenArtAssisting2, isOpenArtAssisting3, isOpenArtAssisting4, isOpenArtAssisting5,
-    isOpenArtAssisting6, isOpenArtAssisting7, isOpenArtAssisting8, isOpenArtAssisting9, isOpenArtAssisting10,
-    isOpenArtAssisting11, isOpenArtAssisting12, isOpenArtAssisting13, isOpenArtAssisting14, isOpenArtAssisting15,
-    isOpenArtAssisting16, isOpenArtAssisting17, isOpenArtAssisting18]
+    isOpenArtAssisting6, isOpenArtAssisting7, isOpenArtAssisting8, isOpenArtAssisting9, isOpenArtAssisting10, isOpenArtAssisting11, isOpenArtAssisting12, 
+    isOpenArtAssisting13, isOpenArtAssisting14, isOpenArtAssisting15, isOpenArtAssisting16, isOpenArtAssisting17, isOpenArtAssisting18, isOpenArtAssisting19, 
+    isOpenArtAssisting20, isOpenArtAssisting21, isOpenArtAssisting22, isOpenArtAssisting23, isOpenArtAssisting24, isOpenArtAssisting25, isOpenArtAssisting26,
+    isOpenArtAssisting27]
   
     function openModal0(){
      document.getElementById("myModal0").style.display = "block";
@@ -156,7 +205,7 @@ function ArtAssisting() {
       <div className="gallery">
 
         {art_assisting.filter(function(obj){
-          if(obj.action < 5){
+          if(obj.action < 2){
             return obj
           }
         }).map((index) =>
@@ -177,7 +226,7 @@ function ArtAssisting() {
           </React.Fragment>
         )}
           {art_assisting.filter(function(obj){
-          if(obj.action == 5){
+          if(obj.action == 2){
             return obj
           
           }
@@ -198,7 +247,7 @@ function ArtAssisting() {
   
         )}
         {art_assisting.filter(function(obj){
-          if(obj.action > 5){
+          if(obj.action > 2){
             return obj
           }
         }).map((index) =>
