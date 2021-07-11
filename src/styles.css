@@ -28,11 +28,11 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-transparent {
   width: 30px;
 }
 
-.coloured{
+.coloured {
   color: yellow;
 }
 
-.page{
+.page {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,14 +41,21 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-transparent {
   z-index: 0;
 }
 
-.contact-page{
+.contact-page {
+  background-image: url('background/about.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   height: 100%;
   width: 100%;
   z-index: 99;
+  color: black;
 }
 
+.black {
+  color: black;
+}
 
 .contact-text {
   z-index: 1;
@@ -435,7 +442,7 @@ height: 30px;
   }
   .gallery {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     grid-template-rows: auto;
     grid-gap: 0px;
   }
@@ -663,35 +670,23 @@ figure {
   background-position: 50% 50%;
   opacity: 0;
   z-index: 0;
-  animation: imageAnimation 35s linear infinite 0s; 
+  animation: imageAnimation 20s linear infinite 0s; 
 }
 
 .cb-slideshow li:nth-child(1) span { 
   background-image: url(background/darker_place.webp);
 }
 .cb-slideshow li:nth-child(2) span { 
-  background-image: url(background/blonde.webp);
+  background-image: url(background/homepage2.jpg);
   animation-delay: 5s;  
 }
 .cb-slideshow li:nth-child(3) span { 
-  background-image: url(background/lmd.webp);
+  background-image: url(background/homepage3.jpg);
   animation-delay: 10s; 
 }
 .cb-slideshow li:nth-child(4) span { 
-  background-image: url(background/flowers.webp);
+  background-image: url(background/homepage4.jpg);
   animation-delay: 15s; 
-}
-.cb-slideshow li:nth-child(5) span { 
-  background-image: url(background/greenbackground.webp);
-  animation-delay: 20s; 
-}
-.cb-slideshow li:nth-child(6) span { 
-  background-image: url(background/snakebite2.webp);
-  animation-delay: 25s; 
-}
-.cb-slideshow li:nth-child(7) span { 
-  background-image: url(background/makeit.webp);
-  animation-delay: 30s; 
 }
 
 .cb-slideshow li div h3 { 
@@ -1053,3 +1048,4 @@ img.hover-shadow {
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+

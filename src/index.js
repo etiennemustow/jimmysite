@@ -15,10 +15,6 @@ import {
 require('dotenv').config()
 
 
-// import{ init } from 'emailjs-com';
-// init("user_2t5SOqUvP0K225EiHwW6p");
-
-
 function ArtAssisting() {
   const art_assisting = state.paragraphs.art_assisting
 
@@ -52,129 +48,125 @@ function ArtAssisting() {
   const [isOpenArtAssisting27, setOpenArtAssisting27] = useState(false)
 
   function artAssisting0Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting0(boolean)
   }
   function artAssisting1Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting1(boolean)
   }
   function artAssisting2Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting2(boolean)
   }
   function artAssisting3Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting3(boolean)
   }
 
   function artAssisting4Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting4(boolean)
   }
 
   function artAssisting5Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting5(boolean)
   }
 
   function artAssisting6Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting6(boolean)
   }
 
   function artAssisting7Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting7(boolean)
   }
 
   function artAssisting8Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting8(boolean)
   }
   function artAssisting9Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting9(boolean)
   }
 
   function artAssisting10Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting10(boolean)
   }
 
   function artAssisting11Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting11(boolean)
   }
 
   function artAssisting12Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting12(boolean)
   }
 
   function artAssisting13Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting13(boolean)
   }
 
   function artAssisting14Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting14(boolean)
   }
 
 
   function artAssisting15Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting15(boolean)
   }
 
   function artAssisting16Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting16(boolean)
 
   } 
   function artAssisting17Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting17(boolean)
   }
   function artAssisting18Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting18(boolean)
   }
   function artAssisting19Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting19(boolean)
   }
   function artAssisting20Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting20(boolean)
   }
   function artAssisting21Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting21(boolean)
   }
   function artAssisting22Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting22(boolean)
   }  
   function artAssisting23Action(boolean) {
-    console.log("CLICKED")
+
     setOpenArtAssisting23(boolean)
   }
 function artAssisting24Action(boolean) {
-  console.log("CLICKED")
   setOpenArtAssisting24(boolean)
 }
 function artAssisting25Action(boolean) {
-  console.log("CLICKED")
   setOpenArtAssisting25(boolean)
 }
 function artAssisting26Action(boolean) {
-  console.log("CLICKED")
   setOpenArtAssisting26(boolean)
 }
 function artAssisting27Action(boolean) {
-  console.log("CLICKED")
   setOpenArtAssisting27(boolean)
 }
 
@@ -285,11 +277,11 @@ function NavBar({ art_assisting, production_design, render_art, contact }) {
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <a className="nav-link" id={art_assisting} href="/art_assisting">Art Assisting</a>
+        <li className="nav-item">
+            <a className="nav-link" id={production_design} href="/production_design">Production Design</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" id={production_design} href="/production_design">Production Design</a>
+            <a className="nav-link" id={art_assisting} href="/art_assisting">Art Assisting</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" id={render_art} href="/render_art">Render Art</a>
@@ -314,18 +306,18 @@ function Contact() {
         <div className="boxed">
           <div className="contact-text">
             <div className="centered-text">
-              <h2 className="contact-heading underline">About</h2>
+              <h2 className="contact-heading">About</h2>
               <br></br>
               <h2>I've worked within the art department for Commercial, Music Videos, Fashion and Film since March 2019.
               In working a variety of roles, notably, Art Assistant, Production Designer and Render Artist,
-          I'm constantly learning and always strive to create exceptional sets.</h2>
+          I'm constantly learning and always strive to create exceptional sets. I am London Based and work from my studio based in Stamford Hill</h2>
               <br></br>
               <div className="underline"><h2>Get in touch:</h2></div>
-              <div className=""><a className="" href={`mailto:jimmyvantwest@gmail.com`}><h2>jimmyvantwest@gmail.com</h2></a></div>
-              <div className=""><a className="" href="tel:+447588893374"><h2>+44 (0) 758 889 3374</h2></a></div>
+              <br></br>
+              <div className=""><a className="" href={`mailto:jimmyvantwest@gmail.com`}><h2 className="black">jimmyvantwest@gmail.com</h2></a></div>
+              <div className=""><a className="" href="tel:+447588893374"><h2 className="black">+44 (0) 758 889 3374</h2></a></div>
               <a href="https://www.instagram.com/jimmyvantwest"><img className="contact-icon" src={state.icons.instagram}></img></a>
               <br></br>
-              <ContactForm />
             </div>
 
           </div>
@@ -341,23 +333,52 @@ function ProductionDesign() {
   const [isOpenProdDesign0, setOpenProdDesign0] = useState(false)
   const [isOpenProdDesign1, setOpenProdDesign1] = useState(false)
   const [isOpenProdDesign2, setOpenProdDesign2] = useState(false)
-
+  const [isOpenProdDesign3, setOpenProdDesign3] = useState(false)  
+  const [isOpenProdDesign4, setOpenProdDesign4] = useState(false)  
+  const [isOpenProdDesign5, setOpenProdDesign5] = useState(false)  
+  const [isOpenProdDesign6, setOpenProdDesign6] = useState(false)
+  const [isOpenProdDesign7, setOpenProdDesign7] = useState(false)  
+  const [isOpenProdDesign8, setOpenProdDesign8] = useState(false)
 
   function prodDesign0Action(boolean) {
-    console.log("CLICKED")
+
     setOpenProdDesign0(boolean)
   }
   function prodDesign1Action(boolean) {
-    console.log("CLICKED")
+
     setOpenProdDesign1(boolean)
   }
   function prodDesign2Action(boolean) {
-    console.log("CLICKED")
+
     setOpenProdDesign2(boolean)
   }
+  function prodDesign3Action(boolean) {
 
-  const prodDesignActions = [prodDesign0Action, prodDesign1Action, prodDesign2Action]
-  const is_action = [isOpenProdDesign0, isOpenProdDesign1, isOpenProdDesign2]
+    setOpenProdDesign3(boolean)
+  }
+  function prodDesign4Action(boolean) {
+
+    setOpenProdDesign4(boolean)
+  }
+  function prodDesign5Action(boolean) {
+
+    setOpenProdDesign5(boolean)
+  }
+  function prodDesign6Action(boolean) {
+
+    setOpenProdDesign6(boolean)
+  }
+  function prodDesign7Action(boolean) {
+
+    setOpenProdDesign7(boolean)
+  }
+  function prodDesign8Action(boolean) {
+
+    setOpenProdDesign8(boolean)
+  }
+
+  const prodDesignActions = [prodDesign0Action, prodDesign1Action, prodDesign2Action, prodDesign3Action, prodDesign4Action, prodDesign5Action, prodDesign6Action, prodDesign7Action, prodDesign8Action]
+  const is_action = [isOpenProdDesign0, isOpenProdDesign1, isOpenProdDesign2, isOpenProdDesign3, isOpenProdDesign4, isOpenProdDesign5, isOpenProdDesign6, isOpenProdDesign7, isOpenProdDesign8]
 
   return (
     <>

@@ -13,24 +13,13 @@ const state = {
   paragraphs: {
     production_design: [
       {
-      header: "TTRRUUCES - TTRRUUCES",
-      image: "/truuuces.png",
+      header: "The Tate: Reframed x Steamdown",
+      image: "/tate.jpg",
       text1: "directed by Maxim Kelly",
-      text2: "production design by Jimmy Van Twest",
-      video: "380030498",
-      channel: "vimeo",
+      text2: "production design by Jimmy Van Twest & Sarah Asmail",
+      video: "ogJtu-lQGic",
+      channel: "youtube",
       action: 0,
-      css: "gallery__item gallery__item--"
-    },
-    {
-      header: "Finn Foxell- Make It Count",
-      image: "/makeitcount.jpg",
-      text1:
-      "directed by Milo Blake",
-      text2: "production design by Jimmy Van Twest",
-      video: "450474177",
-      channel: "vimeo",
-      action: 1,
       css: "gallery__item gallery__item--"
     },
     {
@@ -41,9 +30,82 @@ const state = {
       text2: "production design by Jimmy Van Twest",
       video: "65xdvUfH4tM",
       channel: "youtube",
+      action: 1,
+      css: "gallery__item gallery__item--"
+    },
+    {
+      header: "British Vogue \“Now You See Me\”",
+      image: "/ballroomscene.jpeg",
+      text1: "directed by Iggy London",
+      text2: "production design by Jimmy Van Twest",
+      video: "2bS5GSPYhHo",
+      channel: "youtube",
       action: 2,
       css: "gallery__item gallery__item--"
-    }
+    },
+    {
+      header: "Corteiz - Don’t Be A Harry",
+      image: "/corteiz.png",
+      text1: "directed by Walid Labri",
+      text2: "production design by Jimmy Van Twest",
+      video: "569321719",
+      channel: "vimeo",
+      action: 3,
+      css: "gallery__item gallery__item--"
+    },
+    {
+      header: "ELI - LOVER",
+      image: "/elilover.jpg",
+      text1: "directed by Jade O'connor",
+      text2: "production design by Jimmy Van Twest",
+      video: "yp7H_VYHu18",
+      channel: "youtube",
+      action: 4,
+      css: "gallery__item gallery__item--"
+    },
+    {
+      header: "Finn Foxell- Make It Count",
+      image: "/makeitcount.jpg",
+      text1:
+      "directed by Milo Blake",
+      text2: "production design by Jimmy Van Twest",
+      video: "450474177",
+      channel: "vimeo",
+      action: 5,
+      css: "gallery__item gallery__item--"
+    },
+    {
+      header: "Emma Jean Thackray - Say Something",
+      image: "/emmajeansaysomething.jpeg",
+      text1: "directed by Avesta Keshtmand",
+      text2: "production design by Jimmy Van Twest & Sarah Asmail",
+      video: "kvh2OSrghEA",
+      channel: "youtube",
+      action: 6,
+      css: "gallery__item gallery__item--"
+    },
+    {
+      header: "TTRRUUCES - TTRRUUCES",
+      image: "/truuuces.png",
+      text1: "directed by Maxim Kelly",
+      text2: "production design by Jimmy Van Twest",
+      video: "380030498",
+      channel: "vimeo",
+      action: 7,
+      css: "gallery__item gallery__item--"
+    },
+    {
+      header: "BXKS - Must Feel",
+      image: "/bxksmustfeel.jpeg",
+      text1:
+      "directed by Sheena Brobbey",
+      text2: "production design by Jimmy Van Twest",
+      video: "d63EvToaaiI",
+      channel: "youtube",
+      action: 8,
+      css: "gallery__item gallery__item--"
+    },
+    
   ],
   render_art: {
     apartment: [
