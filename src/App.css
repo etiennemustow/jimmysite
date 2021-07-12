@@ -18,7 +18,7 @@ body {
   margin: 0;
   padding: 0;
   background: #0c0f13;
-  overflow: hidden;
+  overflow: scroll;
   font-family: 'defonte-leger';
   color: #8b8b8b;
   font-size: 0.9rem;
@@ -37,7 +37,7 @@ a:hover {
 #root {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .loading {
@@ -93,7 +93,7 @@ a:hover {
 
 @media screen and (min-width: 53em) {
 	body {
-		overflow: hidden;
+		overflow: scroll;
 	}
 	.frame {
     display: grid;

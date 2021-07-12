@@ -15,7 +15,7 @@ const state = {
       {
       header: "The Tate: Reframed x Steamdown",
       image: "/tate.jpg",
-      text1: "directed by Maxim Kelly",
+      text1: "directed by Lily Bonesso",
       text2: "production design by Jimmy Van Twest & Sarah Asmail",
       video: "ogJtu-lQGic",
       channel: "youtube",

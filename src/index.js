@@ -301,6 +301,7 @@ function Contact() {
   return (
     <>
       <NavBar contact="active_tab" />
+      <div className="background-no-scroll">
 
       <div className="contact-page">
         <div className="boxed">
@@ -322,6 +323,7 @@ function Contact() {
 
           </div>
         </div>
+      </div>
       </div>
     </>)
 }
