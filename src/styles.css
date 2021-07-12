@@ -56,7 +56,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-transparent {
   width: 100%;
   z-index: 99;
   color: black;
-  background-image: url('background/about4k.jpg');
+  background-image: url('background/about4k2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -631,12 +631,6 @@ body,
   height: 100%;
   overflow: scroll;
 }
-
-/* .background-no-scroll {
-  background-image: url('background/about4k.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
 
 :root {
   font-size: 20px;
