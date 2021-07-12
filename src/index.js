@@ -310,9 +310,9 @@ function Contact() {
               <br></br>
               <h2>I've worked within the art department for Commercial, Music Videos, Fashion and Film since March 2019.
               In working a variety of roles, notably, Art Assistant, Production Designer and Render Artist,
-          I'm constantly learning and always strive to create exceptional sets. I am London Based and work from my studio based in Stamford Hill</h2>
+          I'm constantly learning and always strive to create exceptional sets. I am London Based and work from my studio based in Stamford Hill.</h2>
               <br></br>
-              <div className="underline"><h2>Get in touch:</h2></div>
+              <div><h2>Get in touch:</h2></div>
               <br></br>
               <div className=""><a className="" href={`mailto:jimmyvantwest@gmail.com`}><h2 className="black">jimmyvantwest@gmail.com</h2></a></div>
               <div className=""><a className="" href="tel:+447588893374"><h2 className="black">+44 (0) 758 889 3374</h2></a></div>
