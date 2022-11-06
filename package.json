@@ -28,18 +28,18 @@
     "react-reveal": "^1.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.2.0",
+    "react-scripts": "^5.0.1",
     "react-transition-group": "^4.4.1",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "emailjs-com": "^2.6.4",
+    "is-svg": ">=4.2.2",
     "node-notifier": ">=8.0.1",
     "serialize-javascript": ">=3.1.0",
-    "typescript": "3.3.3",
-    "ws": ">=5.2.3",
     "sockjs": ">=0.3.20",
-    "is-svg": ">=4.2.2"
+    "typescript": "3.3.3",
+    "ws": ">=5.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
