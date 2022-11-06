@@ -120,7 +120,7 @@ const state = {
       text1:
       "directed by Sheena Brobbey",
       text2: "production design by Jimmy Van Twest",
-      video: "d63EvToaaiI",
+      video: "7zY0-EECd8o",
       channel: "youtube",
       action: 10,
       css: "gallery__item gallery__item--"
