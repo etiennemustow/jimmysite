@@ -9,14 +9,14 @@ export default
     {
         //(Please Do Not Remove The comma(,) after every variable)
         //Change The Website Template
-        name :'jimmyvantwest | art department',
+        name :'jimmyvantwest | set design',
         headerTagline: [//Line 1 For Header
                         'Hi 👋 You found me! I am Jimmy Van Twest.',
                         //Line 2 For Header
-                        'Art Department based in London',                   //Line 3 For Header
+                        'Set Design based in London',                   //Line 3 For Header
                         
     ],
-    landingPage: 'jimmyvantwest | art department',
+    landingPage: 'jimmyvantwest | set design',
         //Contact Email
         contactEmail:'jimmyvantwest@gmail.com',
         // Add Your About Text Here
