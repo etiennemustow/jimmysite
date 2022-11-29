@@ -683,23 +683,31 @@ figure {
   background-position: 50% 50%;
   opacity: 0;
   z-index: 0;
-  animation: imageAnimation 20s linear infinite 0s; 
+  animation: imageAnimation 30s linear infinite 0s; 
 }
 
 .cb-slideshow li:nth-child(1) span { 
-  background-image: url(background/darker_place.webp);
+  background-image: url(background/rachel.webp);
 }
 .cb-slideshow li:nth-child(2) span { 
-  background-image: url(background/homepage2.jpg);
+  background-image: url(background/handlewithcare.jpeg);
   animation-delay: 5s;  
 }
 .cb-slideshow li:nth-child(3) span { 
-  background-image: url(background/homepage3.jpg);
+  background-image: url(background/tate.jpg);
   animation-delay: 10s; 
 }
 .cb-slideshow li:nth-child(4) span { 
-  background-image: url(background/homepage4.jpg);
+  background-image: url(background/jeshi.jpg);
   animation-delay: 15s; 
+}
+.cb-slideshow li:nth-child(5) span { 
+  background-image: url(background/obongjayar.jpg);
+  animation-delay: 20s; 
+}
+.cb-slideshow li:nth-child(6) span { 
+  background-image: url(background/eli.jpg);
+  animation-delay: 25s; 
 }
 
 .cb-slideshow li div h3 { 

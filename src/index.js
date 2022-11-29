@@ -83,6 +83,8 @@ function SelectedWork() {
   const [isOpenProdDesign8, setOpenProdDesign8] = useState(false)
   const [isOpenProdDesign9, setOpenProdDesign9] = useState(false)
   const [isOpenProdDesign10, setOpenProdDesign10] = useState(false)
+  const [isOpenProdDesign11, setOpenProdDesign11] = useState(false)
+
 
 
   function prodDesign0Action(boolean) {
@@ -129,6 +131,11 @@ function SelectedWork() {
 
     setOpenProdDesign10(boolean)
   }
+  function prodDesign11Action(boolean) {
+
+    setOpenProdDesign11(boolean)
+  }
+
 
   function openModal0(index) {
     console.log(index.key2)
@@ -185,8 +192,8 @@ function SelectedWork() {
   }
 
 
-  const prodDesignActions = [prodDesign0Action, prodDesign1Action, prodDesign2Action, prodDesign3Action, prodDesign4Action, prodDesign5Action, prodDesign6Action, prodDesign7Action, prodDesign8Action, prodDesign9Action, prodDesign10Action]
-  const is_action = [isOpenProdDesign0, isOpenProdDesign1, isOpenProdDesign2, isOpenProdDesign3, isOpenProdDesign4, isOpenProdDesign5, isOpenProdDesign6, isOpenProdDesign7, isOpenProdDesign8, isOpenProdDesign9, isOpenProdDesign10]
+  const prodDesignActions = [prodDesign0Action, prodDesign1Action, prodDesign2Action, prodDesign3Action, prodDesign4Action, prodDesign5Action, prodDesign6Action, prodDesign7Action, prodDesign8Action, prodDesign9Action, prodDesign10Action, prodDesign11Action]
+  const is_action = [isOpenProdDesign0, isOpenProdDesign1, isOpenProdDesign2, isOpenProdDesign3, isOpenProdDesign4, isOpenProdDesign5, isOpenProdDesign6, isOpenProdDesign7, isOpenProdDesign8, isOpenProdDesign9, isOpenProdDesign10, isOpenProdDesign11]
 
   return (
     <>
