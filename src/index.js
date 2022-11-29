@@ -175,7 +175,7 @@ function SelectedWork() {
               closeModal0(index)
             }} className="close cursor" >&times;</span>
             <div className="modal-content-render-art">
-              <Carousel pictures_location={index.gallery} carousel_id="carousel_apartment" />
+              <Carousel pictures_location={index.gallery} carousel_id={"carousel_" + index.key2} />
             </div>
           </div>
         </React.Fragment>
@@ -220,7 +220,7 @@ function Heading({ text }) {
 function Carousel({ pictures_location, carousel_id }) {
   const pictures = pictures_location
   return (
-    <div id={carousel_id} className="carousel slide carousel-fade" data-ride="carousel">
+    <div id={carousel_id} className="carousel slide" data-ride="carousel">
       <div className="carousel-inner">
         {pictures.map((picture) => {
           if (picture.action == 0) {
@@ -249,6 +249,7 @@ function Carousel({ pictures_location, carousel_id }) {
         <span className="sr-only">Next</span>
       </a>
     </div>
+
   )
 }
 
