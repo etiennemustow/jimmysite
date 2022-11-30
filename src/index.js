@@ -138,7 +138,6 @@ function SelectedWork() {
 
 
   function openModal0(index) {
-    console.log(index.key2)
     document.getElementById(index.key2).style.display = "block";
   }
 
@@ -150,7 +149,6 @@ function SelectedWork() {
   function videoPanel(index) {
     return (
       <React.Fragment key={index.action}>
-        {console.log(index.action)}
         <ModalVideo height="700px" width="700px" channel={index.channel} autoplay isOpen={is_action[index.action]} videoId={index.video} onClose={() => prodDesignActions[index.action](false)} />
         <figure className={index.css + index.action} onClick={(e) => {
           e.stopPropagation()
@@ -224,10 +222,12 @@ function Heading({ text }) {
   )
 }
 
+
+
 function Carousel({ pictures_location, carousel_id }) {
   const pictures = pictures_location
   return (
-    <div id={carousel_id} className="carousel slide" data-ride="carousel">
+    <div id={carousel_id} className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
         {pictures.map((picture) => {
           if (picture.action == 0) {
@@ -247,16 +247,24 @@ function Carousel({ pictures_location, carousel_id }) {
         )}
 
       </div>
-      <a className="carousel-control-prev" href={'#' + carousel_id} role="button" data-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="sr-only">Previous</span>
-      </a>
-      <a className="carousel-control-next" href={'#' + carousel_id} role="button" data-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="sr-only">Next</span>
-      </a>
+      {(() => {
+        if (pictures.length > 1) {
+          return (
+            <>
+              <a className="carousel-control-prev" data-bs-target={'#' + carousel_id} role="button" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only">Previous</span>
+              </a>
+              <a className="carousel-control-next" data-bs-target={'#' + carousel_id} role="button" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only">Next</span>
+              </a>
+            </>
+          )
+        }
+      }
+      )()}
     </div>
-
   )
 }
 
