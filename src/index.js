@@ -17,7 +17,7 @@ function NavBar({ selected_work, contact }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-transparent">
       <a className="navbar-brand" href="/">Jimmy Van Twest | Set Design</a>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
 

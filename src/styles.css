@@ -24,6 +24,8 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-transparent {
   position: relative;
   z-index: 3;
   height: 7vh;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 .centered-text{
   width: 70vw;
